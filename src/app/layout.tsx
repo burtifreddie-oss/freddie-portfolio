@@ -1,26 +1,13 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, Bodoni_Moda } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { SmoothScrollProvider } from "@/components/layout/SmoothScrollProvider";
-import { CustomCursor } from "@/components/layout/CustomCursor";
 
 const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
   variable: "--font-inter",
-  subsets: ["latin"],
   display: "swap",
-});
-
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const bodoni = Bodoni_Moda({
-  variable: "--font-bodoni",
-  subsets: ["latin"],
-  display: "swap",
-  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
@@ -51,13 +38,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="pt-BR"
-      className={`${inter.variable} ${playfair.variable} ${bodoni.variable} antialiased`}
-    >
-      <body className="min-h-screen bg-background text-foreground grain">
+    <html lang="pt-BR" className={`antialiased ${inter.variable}`}>
+      <body className="min-h-screen bg-background font-sans text-foreground grain">
         <SmoothScrollProvider>
-          <CustomCursor />
           {children}
         </SmoothScrollProvider>
       </body>

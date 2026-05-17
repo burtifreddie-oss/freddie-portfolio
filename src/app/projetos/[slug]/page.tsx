@@ -36,8 +36,25 @@ function BlockImageFull({ src, alt }: { src: string; alt?: string }) {
         alt={alt ?? ""}
         width={1600}
         height={900}
+        quality={90}
         className="h-auto w-full rounded-xl sm:rounded-2xl"
-        sizes="(max-width: 1400px) 100vw, 1400px"
+        sizes="(max-width: 768px) 100vw, (max-width: 1400px) 100vw, 1400px"
+      />
+    </div>
+  );
+}
+
+function BlockImageSmall({ src, alt }: { src: string; alt?: string }) {
+  return (
+    <div className="flex justify-center">
+      <Image
+        src={src}
+        alt={alt ?? ""}
+        width={200}
+        height={200}
+        quality={90}
+        className="h-auto rounded-xl object-contain"
+        sizes="200px"
       />
     </div>
   );
@@ -50,7 +67,7 @@ function BlockImageRow({ images, cols = 2 }: { images: string[]; cols?: 2 | 3 | 
     "grid-cols-1 sm:grid-cols-2";
 
   return (
-    <div className={`grid gap-3 sm:gap-4 ${gridCols}`}>
+    <div className={`grid gap-4 ${gridCols}`}>
       {images.map((src, i) => (
         <Image
           key={i}
@@ -58,8 +75,9 @@ function BlockImageRow({ images, cols = 2 }: { images: string[]; cols?: 2 | 3 | 
           alt={`imagem ${i + 1}`}
           width={800}
           height={600}
+          quality={90}
           className="h-auto w-full rounded-xl"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 500px"
         />
       ))}
     </div>
@@ -68,9 +86,10 @@ function BlockImageRow({ images, cols = 2 }: { images: string[]; cols?: 2 | 3 | 
 
 function BlockTextSection({ title, body }: { title: string; body?: string }) {
   return (
-    <div className="grid grid-cols-1 gap-4 border-b border-border py-8 md:grid-cols-12 md:gap-12 md:py-12 first:border-t">
-      <div className="md:col-span-4">
-        <h2 className="font-display text-xl tracking-tight sm:text-2xl md:text-3xl">{title}</h2>
+    <div className="grid grid-cols-1 gap-4 py-8 md:grid-cols-12 md:gap-12 md:py-12">
+      <div className={body ? "md:col-span-4" : "md:col-span-8"}>
+        {/* section title — semibold/600 */}
+        <h2 className="font-display text-xl font-semibold tracking-tight sm:text-2xl md:text-3xl">{title}</h2>
       </div>
       {body && (
         <div className="md:col-span-8">
@@ -93,16 +112,16 @@ function BlockTextBilingual({
   enBody: string;
 }) {
   return (
-    <div className="grid grid-cols-1 gap-10 border-b border-border py-12 md:grid-cols-2 md:gap-16 first:border-t">
+    <div className="grid grid-cols-1 gap-10 py-12 md:grid-cols-2 md:gap-16">
       <div>
-        <h2 className="font-display mb-4 text-2xl tracking-tight md:text-3xl">{ptTitle}</h2>
-        <p className="text-base leading-relaxed text-muted-foreground">{ptBody}</p>
+        <h2 className="font-display mb-4 text-2xl font-semibold tracking-tight md:text-3xl">{ptTitle}</h2>
+        <p className="text-base font-normal leading-relaxed text-muted-foreground">{ptBody}</p>
       </div>
       <div>
-        <h2 className="font-display mb-4 text-2xl tracking-tight text-muted-foreground/60 md:text-3xl">
+        <h2 className="font-display mb-4 text-2xl font-semibold tracking-tight text-muted-foreground/60 md:text-3xl">
           {enTitle}
         </h2>
-        <p className="text-base leading-relaxed text-muted-foreground/60">{enBody}</p>
+        <p className="text-base font-normal leading-relaxed text-muted-foreground/60">{enBody}</p>
       </div>
     </div>
   );
@@ -110,8 +129,8 @@ function BlockTextBilingual({
 
 function BlockToolbox({ items }: { items: string[] }) {
   return (
-    <div className="border-b border-border py-12 first:border-t">
-      <h2 className="font-display mb-6 text-2xl tracking-tight md:text-3xl">Toolbox</h2>
+    <div className="py-12">
+      <h2 className="font-display mb-6 text-2xl font-semibold tracking-tight md:text-3xl">Toolbox</h2>
       <div className="flex flex-wrap gap-3">
         {items.map((item) => (
           <span
@@ -130,6 +149,8 @@ function renderBlock(block: Block, i: number) {
   switch (block.type) {
     case "image-full":
       return <BlockImageFull key={i} src={block.src} alt={block.alt} />;
+    case "image-small":
+      return <BlockImageSmall key={i} src={block.src} alt={block.alt} />;
     case "image-row":
       return <BlockImageRow key={i} images={block.images} cols={block.cols} />;
     case "text-section":
@@ -169,17 +190,17 @@ export default async function ProjectPage({
       <main className="relative z-10 pb-16 pt-24 md:pb-40 md:pt-40">
 
         {/* ── Page header ── */}
-        <div className="mx-auto w-full max-w-[1400px] px-5 sm:px-6 md:px-10">
+        <div className="mx-auto w-full max-w-[1400px] px-4 sm:px-6 md:px-10">
           <Link
             href="/#projetos"
-            className="link-underline mb-8 inline-flex min-h-[44px] items-center gap-2 text-xs uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground md:mb-12"
+            className="mb-8 inline-flex min-h-[44px] items-center gap-2 text-xs uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-foreground md:mb-12"
           >
             <ArrowLeft className="h-3 w-3" />
             Voltar
           </Link>
 
-          <div className="flex flex-col gap-4 border-b border-border pb-8 md:gap-5 md:pb-12">
-            <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-col gap-4 border-b border-border pb-8 md:gap-6 md:pb-16">
+            <div className="flex flex-wrap items-center gap-4">
               <span className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground">
                 {project.category}
               </span>
@@ -187,35 +208,28 @@ export default async function ProjectPage({
                 {project.year}
               </span>
             </div>
-            <h1 className="font-display text-[clamp(2.5rem,10vw,9rem)] leading-[0.93] tracking-tight">
+            {/* project title — extrabold/800 */}
+            <h1
+              className="font-display leading-[0.93] tracking-tight"
+              style={{ fontSize: "clamp(2rem, 8vw, 4rem)", fontWeight: 400 }}
+            >
               {project.title}
             </h1>
-            <p className="max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
+            {/* description — regular/400 */}
+            <p className="max-w-2xl text-base font-normal leading-relaxed text-muted-foreground md:text-lg">
               {project.description}
             </p>
           </div>
         </div>
 
         {/* ── Blocks ── */}
-        <div className="mx-auto mt-12 flex w-full max-w-[1400px] flex-col gap-8 px-5 sm:px-6 md:mt-20 md:gap-12 md:px-10">
+        <div className="mx-auto mt-16 flex w-full max-w-[1400px] flex-col gap-8 px-4 sm:px-6 md:mt-24 md:gap-16 md:px-10">
           {project.blocks?.map((block, i) => renderBlock(block, i))}
         </div>
 
-        {/* ── Behance CTA ── */}
-        <div className="mx-auto mt-12 w-full max-w-[1400px] px-5 sm:px-6 md:mt-16 md:px-10">
-          <a
-            href="https://www.behance.net/freddieab"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex min-h-[48px] items-center gap-2 rounded-full border border-border px-6 py-3 text-sm transition-all duration-300 hover:border-accent hover:bg-accent hover:text-background"
-          >
-            Ver projeto completo no Behance
-            <ArrowUpRight className="h-4 w-4" />
-          </a>
-        </div>
 
         {/* ── Next project ── */}
-        <div className="mx-auto mt-16 w-full max-w-[1400px] border-t border-border px-5 pt-8 sm:px-6 md:mt-32 md:px-10 md:pt-10">
+        <div className="mx-auto mt-16 w-full max-w-[1400px] border-t border-border px-4 pt-8 sm:px-6 md:mt-32 md:px-10 md:pt-16">
           <Link
             href={`/projetos/${next.slug}`}
             className="group flex flex-col gap-3 transition-opacity hover:opacity-90"

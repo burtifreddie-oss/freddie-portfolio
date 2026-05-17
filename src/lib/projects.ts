@@ -3,6 +3,7 @@ const BASE = "https://www.freddieburti.com.br/wp-content/uploads";
 // ── Block types ────────────────────────────────────────────────
 export type Block =
   | { type: "image-full"; src: string; alt?: string }
+  | { type: "image-small"; src: string; alt?: string }
   | { type: "image-row"; images: string[]; cols?: 2 | 3 | 4 }
   | { type: "text-section"; title: string; body?: string }
   | { type: "text-bilingual"; ptTitle: string; enTitle: string; ptBody: string; enBody: string }
@@ -28,7 +29,7 @@ export const projects: Project[] = [
     year: "2025",
     description:
       "Campanha Orange Friday em parceria com o Banco Inter — descontos exclusivos para clientes Acerto, com pesquisa de benchmarking e interface orientada por dados.",
-    coverImage: `${BASE}/2024/04/9.png`,
+    coverImage: `/inter-capa.png`,
     size: "large",
     blocks: [
       { type: "image-full", src: `${BASE}/2024/04/9.png`, alt: "Inter — hero" },
@@ -51,33 +52,35 @@ export const projects: Project[] = [
           "We started the project with a benchmarking of various direct and indirect competitors to analyze the interface and the visual organization of the elements.",
       },
       { type: "image-full", src: `${BASE}/2025/03/PESQUISA-WEB.png`, alt: "Pesquisa web" },
-      { type: "image-full", src: `${BASE}/2024/04/Inter-e-acerto-logo-1.png`, alt: "Inter e Acerto logos" },
       { type: "image-full", src: `${BASE}/2025/03/2-2-1.png`, alt: "Interface 1" },
       { type: "image-full", src: `${BASE}/2025/03/3.png`, alt: "Interface 2" },
       { type: "image-full", src: `${BASE}/2025/03/4.png`, alt: "Interface 3" },
-      { type: "image-full", src: `${BASE}/2024/04/pattern-1.png`, alt: "Pattern" },
     ],
   },
   {
     slug: "efi",
-    title: "EFI",
+    title: "EFÍ",
     category: "Interface / Produto",
     year: "2024",
     description:
-      "Marketing Product Design no Efí Bank: campanhas focadas em meios de pagamento, Pix e comunicação visual para e-mails, posts e materiais de campanha.",
+      "No EFÍ Bank, atuei como Marketing Product Designer com foco em meios de pagamento. Desenvolvi campanhas visuais para Pix e Bolix — desde posts e carrosséis de onboarding até e-mails transacionais, cartões e materiais de parceiros.",
     coverImage: `${BASE}/2025/07/capa-efi-2.png`,
     size: "small",
     blocks: [
-      { type: "text-section", title: "Campanhas focadas em meios de pagamentos" },
-      { type: "image-full", src: `${BASE}/2025/07/logo-laranja-01-6.png`, alt: "Logo EFI" },
-      { type: "image-full", src: `${BASE}/2025/07/Frame-26765-1.png`, alt: "Frame EFI" },
+      { type: "text-section", title: "Campanhas focadas em meios de pagamento no EFÍ Bank" },
       { type: "image-full", src: `${BASE}/2025/08/Efi-cover-1.png`, alt: "EFI Cover" },
-      { type: "image-full", src: `${BASE}/2025/08/post-carrossel-onboard-pix-1.png`, alt: "Carrossel Pix 1" },
-      { type: "image-full", src: `${BASE}/2025/07/post-carrossel-onboard-pix-2.png`, alt: "Carrossel Pix 2" },
-      { type: "image-full", src: `${BASE}/2025/07/post-carrossel-onboard-pix-3.png`, alt: "Carrossel Pix 3" },
-      { type: "image-full", src: `${BASE}/2025/07/post-carrossel-onboard-pix-4.png`, alt: "Carrossel Pix 4" },
-      { type: "image-full", src: `${BASE}/2025/07/post-carrossel-onboard-pix-5.png`, alt: "Carrossel Pix 5" },
-      { type: "image-full", src: `${BASE}/2025/07/pix-icon-950x1024.png`, alt: "Ícone Pix" },
+      { type: "image-small", src: `${BASE}/2025/07/logo-laranja-01-6.png`, alt: "Logo EFI" },
+      {
+        type: "image-row",
+        cols: 3,
+        images: [
+          `${BASE}/2025/08/post-carrossel-onboard-pix-1.png`,
+          `${BASE}/2025/07/post-carrossel-onboard-pix-2.png`,
+          `${BASE}/2025/07/post-carrossel-onboard-pix-3.png`,
+          `${BASE}/2025/07/post-carrossel-onboard-pix-4.png`,
+          `${BASE}/2025/07/post-carrossel-onboard-pix-5.png`,
+        ],
+      },
       {
         type: "image-row",
         cols: 4,
@@ -110,7 +113,7 @@ export const projects: Project[] = [
     coverImage: `${BASE}/2023/11/Capa-MB-1.png`,
     size: "small",
     blocks: [
-      { type: "image-full", src: `${BASE}/2024/04/MB-cloud-portif%C3%B3lio.png`, alt: "Mercado Bitcoin" },
+      { type: "image-full", src: "/mb-cloud.png", alt: "Mercado Bitcoin" },
     ],
   },
   {
@@ -144,7 +147,6 @@ export const projects: Project[] = [
         title: "Processo",
         body: "Iniciamos com um kickoff para entender as dores do cliente. Em seguida, um survey gerou insights que alimentaram um affinity mapping, levando à criação de personas. Também realizamos um Lightning Demo onde o cliente apresentou sites de referência.",
       },
-      { type: "image-full", src: `${BASE}/2020/11/Grupo-22-1024x318.png`, alt: "Diamante duplo" },
       { type: "text-section", title: "Survey" },
       {
         type: "image-row",
@@ -219,7 +221,7 @@ export const projects: Project[] = [
     coverImage: `${BASE}/2025/06/Capa-5.png`,
     size: "small",
     blocks: [
-      { type: "image-full", src: `${BASE}/2025/06/Logo.png`, alt: "Crype logo" },
+      { type: "image-small", src: `${BASE}/2025/06/Logo.png`, alt: "Crype logo" },
       { type: "image-full", src: `${BASE}/2025/06/telass.png`, alt: "Crype telas" },
       {
         type: "text-bilingual",
@@ -245,7 +247,6 @@ export const projects: Project[] = [
       { type: "image-full", src: `${BASE}/2025/06/Terceito.png`, alt: "Crype tela 3" },
       { type: "image-full", src: `${BASE}/2025/06/Quarta.png`, alt: "Crype tela 4" },
       { type: "image-full", src: `${BASE}/2025/06/Quinta.jpg`, alt: "Crype tela 5" },
-      { type: "image-full", src: `${BASE}/2025/06/Quinta-1.jpg`, alt: "Crype tela 6" },
     ],
   },
 ];

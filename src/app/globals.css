@@ -20,8 +20,9 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
   --color-card: var(--card);
-  --font-sans: var(--font-inter);
-  --font-display: var(--font-bodoni);
+  --font-sans: var(--font-inter), "Inter", system-ui, sans-serif;
+  --font-display: var(--font-inter), "Inter", system-ui, sans-serif;
+  --font-section: var(--font-inter), "Inter", system-ui, sans-serif;
 }
 
 html,
@@ -37,14 +38,8 @@ html {
 }
 
 body {
-  font-family: var(--font-inter), Inter, system-ui, -apple-system, sans-serif;
-  cursor: none;
-}
-
-@media (max-width: 768px) {
-  body {
-    cursor: auto;
-  }
+  font-family: var(--font-inter), "Inter", system-ui, sans-serif;
+  font-weight: 400;
 }
 
 ::selection {

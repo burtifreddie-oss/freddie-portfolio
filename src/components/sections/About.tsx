@@ -33,7 +33,8 @@ export function About() {
               src={PHOTO}
               alt="Freddie Burti"
               fill
-              sizes="(max-width: 768px) 100vw, 42vw"
+              quality={90}
+              sizes="(max-width: 768px) 100vw, (max-width: 1400px) 42vw, 590px"
               className="object-cover object-[center_15%]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/5 to-transparent" />
@@ -44,7 +45,7 @@ export function About() {
                 </p>
                 <p
                   className="mt-2 text-3xl leading-[1] tracking-tight text-white md:text-5xl"
-                  style={{ fontFamily: "var(--font-bodoni)" }}
+                  style={{ fontFamily: "Aspekta", fontWeight: 700 }}
                 >
                   Freddie
                   <br />

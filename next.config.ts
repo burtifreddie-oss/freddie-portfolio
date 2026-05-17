@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "www.freddieburti.com.br",
-        pathname: "/wp-content/uploads/**",
+        pathname: "/**",
       },
     ],
   },

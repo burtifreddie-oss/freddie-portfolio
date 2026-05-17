@@ -17,7 +17,7 @@ export function Experience() {
             <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
               03 — Experiência
             </span>
-            <h2 className="font-display mt-4 text-[clamp(2.5rem,6vw,5rem)] leading-[1] tracking-tight">
+            <h2 className="font-section mt-4 text-[clamp(2.5rem,6vw,5rem)] leading-[1] tracking-tight">
               Trajetória.
             </h2>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
@@ -72,7 +72,7 @@ export function Experience() {
             <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
               Educação
             </span>
-            <h3 className="font-display mt-4 text-3xl leading-[1] tracking-tight md:text-4xl">
+            <h3 className="font-section mt-4 text-3xl leading-[1] tracking-tight md:text-4xl">
               Formação.
             </h3>
           </div>

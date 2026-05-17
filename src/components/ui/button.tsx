@@ -14,7 +14,7 @@ const buttonVariants = cva(
           "border border-border text-foreground hover:border-accent hover:text-accent",
         ghost: "text-foreground hover:text-accent",
         accent:
-          "bg-accent text-background hover:bg-foreground hover:text-background",
+          "bg-accent text-white hover:bg-foreground hover:text-black",
       },
       size: {
         default: "h-12 px-7",

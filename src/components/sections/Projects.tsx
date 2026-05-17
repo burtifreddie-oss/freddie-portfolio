@@ -21,7 +21,7 @@ export function Projects() {
           <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
             01 — Projetos selecionados
           </span>
-          <h2 className="font-display text-[clamp(2.2rem,6vw,5rem)] leading-[1] tracking-tight">
+          <h2 className="font-section text-[clamp(2.2rem,6vw,5rem)] leading-[1] tracking-tight">
             Trabalhos
             <br />
             recentes.

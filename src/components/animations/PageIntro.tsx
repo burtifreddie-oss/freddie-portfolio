@@ -46,7 +46,7 @@ export function PageIntro() {
             <div className="overflow-hidden">
               <motion.span
                 className="block text-sm tracking-[0.25em] uppercase text-[#f5f5f0]"
-                style={{ fontFamily: "var(--font-bodoni)", fontWeight: 400 }}
+                style={{ fontWeight: 700 }}
                 initial={{ y: "110%", opacity: 0 }}
                 animate={
                   isRevealing
