@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { skills } from "@/lib/experience";
 
@@ -21,7 +21,7 @@ export function About() {
 
         {/* Foto */}
         <div className="md:col-span-5">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, scale: 1.02 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.2 }}
@@ -53,7 +53,7 @@ export function About() {
                 </p>
               </div>
             </div>
-          </motion.div>
+          </m.div>
         </div>
 
         {/* Bio */}
@@ -62,7 +62,7 @@ export function About() {
             Bio
           </span>
 
-          <motion.p
+          <m.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
@@ -70,9 +70,9 @@ export function About() {
             className="mt-5 text-base leading-relaxed text-foreground/90 sm:text-lg"
           >
             {BIO_P1}
-          </motion.p>
+          </m.p>
 
-          <motion.p
+          <m.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
@@ -80,7 +80,7 @@ export function About() {
             className="mt-5 text-base leading-relaxed text-foreground/90 sm:text-lg"
           >
             {BIO_P2}
-          </motion.p>
+          </m.p>
 
           <div className="mt-10 md:mt-12">
             <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
@@ -88,7 +88,7 @@ export function About() {
             </span>
             <div className="mt-4 flex flex-wrap gap-2">
               {skills.map((skill, i) => (
-                <motion.span
+                <m.span
                   key={skill}
                   initial={{ opacity: 0, y: 8 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -96,7 +96,7 @@ export function About() {
                   transition={{ duration: 0.35, delay: i * 0.04 }}
                 >
                   <Badge variant="outline">{skill}</Badge>
-                </motion.span>
+                </m.span>
               ))}
             </div>
           </div>

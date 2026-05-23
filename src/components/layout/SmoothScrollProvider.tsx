@@ -27,22 +27,7 @@ export function SmoothScrollProvider({
     }
     rafId = requestAnimationFrame(raf);
 
-    let mounted = true;
-    import("gsap").then(({ default: gsap }) => {
-      if (!mounted) return;
-      import("gsap/ScrollTrigger").then(({ ScrollTrigger }) => {
-        if (!mounted) return;
-        gsap.registerPlugin(ScrollTrigger);
-        lenis.on("scroll", ScrollTrigger.update);
-        gsap.ticker.add((time) => {
-          lenis.raf(time * 1000);
-        });
-        gsap.ticker.lagSmoothing(0);
-      });
-    });
-
     return () => {
-      mounted = false;
       cancelAnimationFrame(rafId);
       lenis.destroy();
     };

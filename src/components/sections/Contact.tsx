@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 const LINKS = [
   { label: "Enviar e-mail", href: "mailto:burtifreddie@gmail.com" },
@@ -15,7 +15,7 @@ export function Contact() {
       id="contato"
       className="relative z-20 w-full bg-background px-4 pb-8 pt-0 sm:px-6 md:px-10 md:pb-12"
     >
-      <motion.div
+      <m.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.1 }}
@@ -38,7 +38,7 @@ export function Contact() {
         {/* ── Links ── */}
         <div className="mt-10 flex flex-wrap items-center gap-6 sm:gap-10 md:mt-20 md:gap-16">
           {LINKS.map((link, i) => (
-            <motion.a
+            <m.a
               key={link.label}
               href={link.href}
               initial={{ opacity: 0, y: 10 }}
@@ -51,7 +51,7 @@ export function Contact() {
             >
               {link.label}
               <span className="absolute bottom-0 left-0 h-px w-full bg-foreground/30 transition-colors duration-300 group-hover:bg-accent" />
-            </motion.a>
+            </m.a>
           ))}
         </div>
 
@@ -67,7 +67,7 @@ export function Contact() {
             São Paulo, Brasil
           </span>
         </div>
-      </motion.div>
+      </m.div>
     </section>
   );
 }

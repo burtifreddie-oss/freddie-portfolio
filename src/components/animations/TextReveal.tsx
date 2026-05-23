@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 type Props = {
@@ -17,7 +17,7 @@ export function TextReveal({
   delay = 0,
 }: Props) {
   const lines = children.split("\n");
-  const MotionTag = motion[as];
+  const MotionTag = m[as];
 
   return (
     <MotionTag className={cn(className)}>
@@ -27,7 +27,7 @@ export function TextReveal({
           className="block overflow-hidden"
           style={{ lineHeight: "1.2" }}
         >
-          <motion.span
+          <m.span
             className="block"
             initial={{ y: "100%" }}
             whileInView={{ y: "0%" }}
@@ -39,7 +39,7 @@ export function TextReveal({
             }}
           >
             {line}
-          </motion.span>
+          </m.span>
         </span>
       ))}
     </MotionTag>

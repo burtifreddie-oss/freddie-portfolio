@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import type { Project } from "@/lib/projects";
 import { cn } from "@/lib/utils";
@@ -24,7 +24,7 @@ export function ProjectCard({ project, index, className }: Props) {
   }
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 36 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.1 }}
@@ -65,7 +65,7 @@ export function ProjectCard({ project, index, className }: Props) {
           {/* Cursor follower */}
           <AnimatePresence>
             {hovered && (
-              <motion.span
+              <m.span
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
@@ -79,7 +79,7 @@ export function ProjectCard({ project, index, className }: Props) {
               >
                 Ver Projeto
                 <ArrowUpRight className="h-4 w-4" />
-              </motion.span>
+              </m.span>
             )}
           </AnimatePresence>
         </div>
@@ -100,6 +100,6 @@ export function ProjectCard({ project, index, className }: Props) {
           <span className="shrink-0 text-xs font-light text-muted-foreground">{project.year}</span>
         </div>
       </Link>
-    </motion.div>
+    </m.div>
   );
 }

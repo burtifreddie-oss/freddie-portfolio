@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { projects } from "@/lib/projects";
 import { ProjectCard } from "@/components/ProjectCard";
@@ -11,7 +11,7 @@ export function Projects() {
 
       {/* Cabeçalho */}
       <div className="mx-auto mb-10 flex w-full max-w-[1400px] items-end justify-between gap-6 px-5 sm:px-6 md:mb-20 md:px-10">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -26,8 +26,8 @@ export function Projects() {
             <br />
             recentes.
           </h2>
-        </motion.div>
-        <motion.span
+        </m.div>
+        <m.span
           initial={{ width: 0 }}
           whileInView={{ width: "100%" }}
           viewport={{ once: true }}

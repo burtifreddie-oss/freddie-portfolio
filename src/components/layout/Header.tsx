@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
@@ -120,7 +120,7 @@ export function Header() {
       {/* Mobile full-screen menu */}
       <AnimatePresence>
         {open && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
@@ -129,7 +129,7 @@ export function Header() {
           >
             <nav className="flex flex-1 flex-col justify-center px-5 sm:px-6">
               {NAV_LINKS.map((link, i) => (
-                <motion.a
+                <m.a
                   key={link.href}
                   href={link.href}
                   onClick={
@@ -152,11 +152,11 @@ export function Header() {
                 >
                   <span className="text-xs text-muted-foreground">0{i + 1}</span>
                   {link.label}
-                </motion.a>
+                </m.a>
               ))}
 
               {/* CTA buttons no mobile menu */}
-              <motion.div
+              <m.div
                 initial={{ y: 24, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.35, duration: 0.4 }}
@@ -180,9 +180,9 @@ export function Header() {
                 >
                   Currículo
                 </a>
-              </motion.div>
+              </m.div>
             </nav>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </>

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { skills, experience, education } from "@/lib/experience";
 
@@ -23,7 +23,7 @@ export function AboutExperience() {
           {/* ── Foto sticky ── */}
           <div className="md:col-span-4">
             <div className="sticky top-24 pb-4 pt-8 md:pb-24 md:pt-24">
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, scale: 1.02 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, amount: 0.2 }}
@@ -51,7 +51,7 @@ export function AboutExperience() {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </m.div>
             </div>
           </div>
 
@@ -64,7 +64,7 @@ export function AboutExperience() {
                 Sobre
               </h2>
 
-              <motion.p
+              <m.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
@@ -72,9 +72,9 @@ export function AboutExperience() {
                 className="mt-8 text-base leading-relaxed text-foreground/90 sm:text-lg"
               >
                 {BIO_P1}
-              </motion.p>
+              </m.p>
 
-              <motion.p
+              <m.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
@@ -82,7 +82,7 @@ export function AboutExperience() {
                 className="mt-4 text-base leading-relaxed text-foreground/90 sm:text-lg"
               >
                 {BIO_P2}
-              </motion.p>
+              </m.p>
 
               <div className="mt-10 md:mt-12">
                 <span className="text-xs font-light uppercase tracking-[0.2em] text-muted-foreground">
@@ -90,7 +90,7 @@ export function AboutExperience() {
                 </span>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {skills.map((skill, i) => (
-                    <motion.span
+                    <m.span
                       key={skill}
                       initial={{ opacity: 0, y: 8 }}
                       whileInView={{ opacity: 1, y: 0 }}
@@ -98,7 +98,7 @@ export function AboutExperience() {
                       transition={{ duration: 0.35, delay: i * 0.04 }}
                     >
                       <Badge variant="outline">{skill}</Badge>
-                    </motion.span>
+                    </m.span>
                   ))}
                 </div>
               </div>
@@ -113,7 +113,7 @@ export function AboutExperience() {
               <div className="mt-16">
                 <ul className="flex flex-col">
                   {experience.map((item, i) => (
-                    <motion.li
+                    <m.li
                       key={item.company + item.period}
                       initial={{ opacity: 0, y: 16 }}
                       whileInView={{ opacity: 1, y: 0 }}
@@ -135,7 +135,7 @@ export function AboutExperience() {
                       <span className="mt-1 shrink-0 text-xs font-light uppercase tracking-[0.18em] text-muted-foreground sm:mt-0">
                         {item.period}
                       </span>
-                    </motion.li>
+                    </m.li>
                   ))}
                 </ul>
               </div>
@@ -148,7 +148,7 @@ export function AboutExperience() {
               </h2>
               <ul className="mt-16">
                 {education.map((item, i) => (
-                  <motion.li
+                  <m.li
                     key={item.course}
                     initial={{ opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -168,7 +168,7 @@ export function AboutExperience() {
                     <span className="mt-1 shrink-0 text-xs font-light uppercase tracking-[0.18em] text-muted-foreground sm:mt-0">
                       {item.year}
                     </span>
-                  </motion.li>
+                  </m.li>
                 ))}
               </ul>
             </div>

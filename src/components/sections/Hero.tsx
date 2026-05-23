@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import { m, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { projects } from "@/lib/projects";
@@ -91,7 +91,7 @@ function HoverTooltip({ children }: { children: React.ReactNode }) {
       {children}
       <AnimatePresence>
         {hovered && (
-          <motion.span
+          <m.span
             initial={{ opacity: 0, scale: 0.92, y: 6 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.92, y: 6 }}
@@ -104,7 +104,7 @@ function HoverTooltip({ children }: { children: React.ReactNode }) {
             }}
           >
             [ Design is about intention ]
-          </motion.span>
+          </m.span>
         )}
       </AnimatePresence>
     </span>
@@ -120,7 +120,7 @@ function HeroCard({
   index: number;
 }) {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
@@ -141,6 +141,7 @@ function HeroCard({
               fill
               quality={90}
               sizes="(max-width: 768px) 50vw, 25vw"
+              priority={index < 2}
               className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
             />
           ) : (
@@ -164,7 +165,7 @@ function HeroCard({
           </span>
         </div>
       </Link>
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -204,7 +205,7 @@ export function Hero() {
     <section className="md:sticky top-0 z-10 min-h-[100svh]">
 
       {/* ── Card que encolhe e desaparece com o scroll ── */}
-      <motion.div
+      <m.div
         ref={cardRef}
         style={{ scale, opacity, borderRadius }}
         className="relative flex min-h-[100svh] w-full flex-col justify-center overflow-hidden pb-24 pt-28 md:pb-40 md:pt-32"
@@ -214,17 +215,17 @@ export function Hero() {
           {/* ── Texto (esquerda) ── */}
           <div className="flex flex-col gap-4 md:col-span-5 md:gap-6">
 
-            <motion.span
+            <m.span
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 3.7, duration: 0.5 }}
               className="text-sm font-light uppercase tracking-[0.2em] text-muted-foreground"
             >
               <ScrambleText text="Olá, sou o Freddie" />
-            </motion.span>
+            </m.span>
 
             <h1 className="font-display overflow-hidden leading-[1.05] tracking-normal">
-              <motion.span
+              <m.span
                 initial={{ y: 80, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 3.8, duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -240,19 +241,19 @@ export function Hero() {
                 >
                   claras e memoráveis.
                 </span>
-              </motion.span>
+              </m.span>
             </h1>
 
-            <motion.p
+            <m.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 4.0, duration: 0.6 }}
               className="max-w-sm text-lg font-normal leading-relaxed text-muted-foreground sm:max-w-md"
             >
               Movido pela curiosidade e resolução de problemas, busco criar designs transcendendo a estética com a funcionalidade.
-            </motion.p>
+            </m.p>
 
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 4.1, duration: 0.6 }}
@@ -280,7 +281,7 @@ export function Hero() {
               <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
                 <a href="#contato">Entrar em contato</a>
               </Button>
-            </motion.div>
+            </m.div>
 
           </div>
 
@@ -296,21 +297,21 @@ export function Hero() {
         </div>
 
         {/* Scroll indicator */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 4.7, duration: 0.6 }}
           className="absolute bottom-24 left-1/2 hidden -translate-x-1/2 items-center gap-2 text-xs font-light uppercase tracking-[0.18em] text-muted-foreground md:flex"
         >
           <span>Scroll</span>
-          <motion.span
+          <m.span
             animate={{ y: [0, 6, 0] }}
             transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
           >
             <ArrowDown className="h-4 w-4" />
-          </motion.span>
-        </motion.div>
-      </motion.div>
+          </m.span>
+        </m.div>
+      </m.div>
     </section>
   );
 }

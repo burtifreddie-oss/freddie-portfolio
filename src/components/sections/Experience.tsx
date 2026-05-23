@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { experience, education } from "@/lib/experience";
 
 export function Experience() {
@@ -27,7 +27,7 @@ export function Experience() {
 
           <div className="relative md:col-span-8">
             {/* Linha vertical — alinhada com o dot (left-[5px] = metade do dot h-2.5 w-2.5) */}
-            <motion.span
+            <m.span
               initial={{ scaleY: 0 }}
               whileInView={{ scaleY: 1 }}
               viewport={{ once: true, amount: 0.05 }}
@@ -38,7 +38,7 @@ export function Experience() {
 
             <ul className="flex flex-col">
               {experience.map((item, i) => (
-                <motion.li
+                <m.li
                   key={item.company + item.period}
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -60,7 +60,7 @@ export function Experience() {
                   <span className="mt-1 shrink-0 text-xs uppercase tracking-[0.18em] text-muted-foreground md:mt-0">
                     {item.period}
                   </span>
-                </motion.li>
+                </m.li>
               ))}
             </ul>
           </div>
@@ -78,7 +78,7 @@ export function Experience() {
           </div>
           <ul className="md:col-span-8">
             {education.map((item, i) => (
-              <motion.li
+              <m.li
                 key={item.course}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -95,7 +95,7 @@ export function Experience() {
                 <span className="mt-1 shrink-0 text-xs uppercase tracking-[0.18em] text-muted-foreground sm:mt-0">
                   {item.year}
                 </span>
-              </motion.li>
+              </m.li>
             ))}
           </ul>
         </div>

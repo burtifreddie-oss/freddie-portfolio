@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { SmoothScrollProvider } from "@/components/layout/SmoothScrollProvider";
+import { MotionProvider } from "@/components/animations/MotionProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -13,12 +14,12 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Freddie Burti — Designer",
   description:
-    "Designer em São Paulo com mais de 7 anos de experiência. Transcendendo a estética com a funcionalidade — UI/UX, branding e direção de arte.",
+    "Designer em São Paulo com mais de 8 anos de experiência. UI/UX, branding e direção de arte orientada por dados.",
   metadataBase: new URL("https://freddieburti.com"),
   openGraph: {
     title: "Freddie Burti — Designer",
     description:
-      "Designer em São Paulo com mais de 7 anos de experiência. Transcendendo a estética com a funcionalidade.",
+      "Designer em São Paulo com mais de 8 anos de experiência. UI/UX, branding e direção de arte.",
     url: "https://freddieburti.com",
     siteName: "Freddie Burti",
     locale: "pt_BR",
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Freddie Burti — Designer",
     description:
-      "Designer em São Paulo. Transcendendo a estética com a funcionalidade.",
+      "Designer em São Paulo. UI/UX, branding e direção de arte.",
   },
 };
 
@@ -40,9 +41,11 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`antialiased ${inter.variable}`}>
       <body className="min-h-screen bg-background font-sans text-foreground grain">
-        <SmoothScrollProvider>
-          {children}
-        </SmoothScrollProvider>
+        <MotionProvider>
+          <SmoothScrollProvider>
+            {children}
+          </SmoothScrollProvider>
+        </MotionProvider>
       </body>
     </html>
   );
