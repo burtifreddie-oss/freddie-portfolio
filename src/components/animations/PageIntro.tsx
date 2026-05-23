@@ -10,6 +10,12 @@ export function PageIntro() {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (mq.matches) { setPhase("done"); return; }
 
+    // Pula o loading se o usuário já visitou antes
+    const visited = localStorage.getItem("fb_visited");
+    if (visited) { setPhase("done"); return; }
+
+    localStorage.setItem("fb_visited", "1");
+
     const t1 = setTimeout(() => setPhase("reveal"), 1800);
     const t2 = setTimeout(() => setPhase("done"), 2700);
     return () => { clearTimeout(t1); clearTimeout(t2); };
