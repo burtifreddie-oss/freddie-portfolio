@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import Lenis from "lenis";
 
 export function SmoothScrollProvider({
   children,
@@ -14,22 +13,40 @@ export function SmoothScrollProvider({
     ).matches;
     if (prefersReducedMotion) return;
 
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-    });
-
     let rafId = 0;
-    function raf(time: number) {
-      lenis.raf(time);
-      rafId = requestAnimationFrame(raf);
+    let cleanup: (() => void) | null = null;
+
+    const init = () => {
+      import("lenis").then(({ default: Lenis }) => {
+        const lenis = new Lenis({
+          duration: 1.2,
+          easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          smoothWheel: true,
+        });
+
+        function raf(time: number) {
+          lenis.raf(time);
+          rafId = requestAnimationFrame(raf);
+        }
+        rafId = requestAnimationFrame(raf);
+
+        cleanup = () => {
+          cancelAnimationFrame(rafId);
+          lenis.destroy();
+        };
+      });
+    };
+
+    // Inicia Lenis somente após o carregamento completo da página
+    if (document.readyState === "complete") {
+      setTimeout(init, 0);
+    } else {
+      window.addEventListener("load", () => setTimeout(init, 0), { once: true });
     }
-    rafId = requestAnimationFrame(raf);
 
     return () => {
+      cleanup?.();
       cancelAnimationFrame(rafId);
-      lenis.destroy();
     };
   }, []);
 
