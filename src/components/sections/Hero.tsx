@@ -124,7 +124,7 @@ function HeroCard({
       initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
-        delay: 3.4 + index * 0.12,
+        delay: 4.3 + index * 0.12,
         duration: 0.7,
         ease: [0.25, 0.46, 0.45, 0.94],
       }}
@@ -217,7 +217,7 @@ export function Hero() {
             <motion.span
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 2.8, duration: 0.5 }}
+              transition={{ delay: 3.7, duration: 0.5 }}
               className="text-sm font-light uppercase tracking-[0.2em] text-muted-foreground"
             >
               <ScrambleText text="Olá, sou o Freddie" />
@@ -227,7 +227,7 @@ export function Hero() {
               <motion.span
                 initial={{ y: 80, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 2.9, duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
+                transition={{ delay: 3.8, duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
                 className="block text-[clamp(1.4rem,6vw,2rem)]"
                 style={{ fontWeight: 500 }}
               >
@@ -246,7 +246,7 @@ export function Hero() {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 3.1, duration: 0.6 }}
+              transition={{ delay: 4.0, duration: 0.6 }}
               className="max-w-sm text-lg font-normal leading-relaxed text-muted-foreground sm:max-w-md"
             >
               Movido pela curiosidade e resolução de problemas, busco criar designs transcendendo a estética com a funcionalidade.
@@ -255,7 +255,7 @@ export function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 3.2, duration: 0.6 }}
+              transition={{ delay: 4.1, duration: 0.6 }}
               className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4"
             >
               <Button asChild variant="accent" size="lg" className="w-full sm:w-auto">
@@ -299,7 +299,7 @@ export function Hero() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 3.7, duration: 0.6 }}
+          transition={{ delay: 4.7, duration: 0.6 }}
           className="absolute bottom-24 left-1/2 hidden -translate-x-1/2 items-center gap-2 text-xs font-light uppercase tracking-[0.18em] text-muted-foreground md:flex"
         >
           <span>Scroll</span>

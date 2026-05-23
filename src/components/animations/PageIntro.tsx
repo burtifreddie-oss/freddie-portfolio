@@ -16,8 +16,8 @@ export function PageIntro() {
 
     localStorage.setItem("fb_visited", "1");
 
-    const t1 = setTimeout(() => setPhase("reveal"), 1800);
-    const t2 = setTimeout(() => setPhase("done"), 2700);
+    const t1 = setTimeout(() => setPhase("reveal"), 2600);
+    const t2 = setTimeout(() => setPhase("done"), 3600);
     return () => { clearTimeout(t1); clearTimeout(t2); };
   }, []);
 
@@ -80,7 +80,7 @@ export function PageIntro() {
                 className="absolute inset-y-0 left-0 bg-[#FF3B30]"
                 initial={{ width: "0%" }}
                 animate={{ width: isRevealing ? "100%" : "100%" }}
-                transition={{ duration: 1.5, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.2 }}
+                transition={{ duration: 2.2, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.2 }}
               />
             </motion.div>
 
