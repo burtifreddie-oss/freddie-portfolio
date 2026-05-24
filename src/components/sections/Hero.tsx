@@ -180,7 +180,8 @@ export function Hero() {
     return () => clearInterval(t);
   }, []);
 
-  const [isMobile, setIsMobile] = useState(false);
+  // Inicia como true para evitar flash de opacity=0 no mobile antes da hidratação
+  const [isMobile, setIsMobile] = useState(true);
 
   useEffect(() => {
     const check = () => {

@@ -13,6 +13,10 @@ export function SmoothScrollProvider({
     ).matches;
     if (prefersReducedMotion) return;
 
+    // Lenis só no desktop — no mobile o scroll nativo é mais estável
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) return;
+
     let rafId = 0;
     let cleanup: (() => void) | null = null;
 
