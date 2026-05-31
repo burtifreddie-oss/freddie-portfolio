@@ -88,7 +88,6 @@ function BlockTextSection({ title, body }: { title: string; body?: string }) {
   return (
     <div className="grid grid-cols-1 gap-4 py-8 md:grid-cols-12 md:gap-12 md:py-12">
       <div className={body ? "md:col-span-4" : "md:col-span-8"}>
-        {/* section title — semibold/600 */}
         <h2 className="font-display text-xl font-semibold tracking-tight sm:text-2xl md:text-3xl">{title}</h2>
       </div>
       {body && (
@@ -100,37 +99,10 @@ function BlockTextSection({ title, body }: { title: string; body?: string }) {
   );
 }
 
-function BlockTextBilingual({
-  ptTitle,
-  enTitle,
-  ptBody,
-  enBody,
-}: {
-  ptTitle: string;
-  enTitle: string;
-  ptBody: string;
-  enBody: string;
-}) {
-  return (
-    <div className="grid grid-cols-1 gap-10 py-12 md:grid-cols-2 md:gap-16">
-      <div>
-        <h2 className="font-display mb-4 text-2xl font-semibold tracking-tight md:text-3xl">{ptTitle}</h2>
-        <p className="text-base font-normal leading-relaxed text-muted-foreground">{ptBody}</p>
-      </div>
-      <div>
-        <h2 className="font-display mb-4 text-2xl font-semibold tracking-tight text-muted-foreground/60 md:text-3xl">
-          {enTitle}
-        </h2>
-        <p className="text-base font-normal leading-relaxed text-muted-foreground/60">{enBody}</p>
-      </div>
-    </div>
-  );
-}
-
 function BlockToolbox({ items }: { items: string[] }) {
   return (
-    <div className="py-12">
-      <h2 className="font-display mb-6 text-2xl font-semibold tracking-tight md:text-3xl">Toolbox</h2>
+    <div className="py-8 md:py-12">
+      <h2 className="font-display mb-6 text-xl font-semibold tracking-tight sm:text-2xl">Toolbox</h2>
       <div className="flex flex-wrap gap-3">
         {items.map((item) => (
           <span
@@ -156,18 +128,41 @@ function renderBlock(block: Block, i: number) {
     case "text-section":
       return <BlockTextSection key={i} title={block.title} body={block.body} />;
     case "text-bilingual":
-      return (
-        <BlockTextBilingual
-          key={i}
-          ptTitle={block.ptTitle}
-          enTitle={block.enTitle}
-          ptBody={block.ptBody}
-          enBody={block.enBody}
-        />
-      );
+      return null; // migrado para campos dedicados
     case "toolbox":
       return <BlockToolbox key={i} items={block.items} />;
   }
+}
+
+// ── Seção de conteúdo (Problem / Objectives / Progress) ───────
+
+function ContentSection({
+  label,
+  body,
+  tinted,
+}: {
+  label: string;
+  body: string;
+  tinted?: boolean;
+}) {
+  return (
+    <div className={tinted ? "bg-card" : "bg-background"}>
+      <div className="mx-auto w-full max-w-[1400px] px-4 sm:px-6 md:px-10">
+        <div className="grid grid-cols-1 gap-6 py-16 md:grid-cols-12 md:gap-12 md:py-24">
+          {/* Label — col esquerda */}
+          <div className="md:col-span-4">
+            <span className="text-xs font-light uppercase tracking-[0.2em] text-muted-foreground">
+              {label}
+            </span>
+          </div>
+          {/* Corpo — col direita */}
+          <div className="md:col-span-8">
+            <p className="text-base leading-relaxed text-foreground/80 sm:text-lg">{body}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 // ── Page ──────────────────────────────────────────────────────
@@ -187,49 +182,84 @@ export default async function ProjectPage({
   return (
     <>
       <Header />
-      <main className="relative z-10 pb-16 pt-24 md:pb-40 md:pt-40">
+      <main className="relative z-10">
 
         {/* ── Page header ── */}
-        <div className="mx-auto w-full max-w-[1400px] px-4 sm:px-6 md:px-10">
+        <div className="mx-auto w-full max-w-[1400px] px-4 pb-10 pt-24 sm:px-6 md:px-10 md:pb-16 md:pt-40">
           <Link
             href="/#projetos"
-            className="mb-8 inline-flex min-h-[44px] items-center gap-2 text-xs uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-foreground md:mb-12"
+            className="mb-8 inline-flex min-h-[44px] items-center gap-2 text-xs uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-foreground md:mb-10"
           >
             <ArrowLeft className="h-3 w-3" />
             Voltar
           </Link>
 
-          <div className="flex flex-col gap-4 border-b border-border pb-8 md:gap-6 md:pb-16">
-            <div className="flex flex-wrap items-center gap-4">
-              <span className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground">
-                {project.category}
-              </span>
-              <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                {project.year}
-              </span>
-            </div>
-            {/* project title — extrabold/800 */}
-            <h1
-              className="font-display leading-[0.93] tracking-tight"
-              style={{ fontSize: "clamp(2rem, 8vw, 4rem)", fontWeight: 400 }}
-            >
-              {project.title}
-            </h1>
-            {/* description — regular/400 */}
-            <p className="max-w-2xl text-base font-normal leading-relaxed text-muted-foreground md:text-lg">
-              {project.description}
-            </p>
+          {/* Data + título */}
+          <div className="mb-2 text-sm text-muted-foreground">{project.year}</div>
+          <h1
+            className="font-display leading-[0.95] tracking-tight"
+            style={{ fontSize: "clamp(2.5rem, 8vw, 5rem)", fontWeight: 400 }}
+          >
+            {project.title}
+          </h1>
+
+          {/* Cover image */}
+          <div className="mt-8 w-full overflow-hidden rounded-2xl md:mt-12">
+            <Image
+              src={project.coverImage}
+              alt={project.title}
+              width={1400}
+              height={787}
+              quality={90}
+              priority
+              className="h-auto w-full object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1400px) 100vw, 1400px"
+            />
           </div>
+
+          {/* Meta row — Role + Responsibilities */}
+          {(project.role || project.responsibilities) && (
+            <div className="mt-8 grid grid-cols-2 gap-8 border-t border-border pt-8 md:mt-12 md:grid-cols-4 md:gap-12 md:pt-12">
+              {project.role && (
+                <div>
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.15em]">Role</p>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{project.role}</p>
+                </div>
+              )}
+              {project.responsibilities && (
+                <div className="col-span-1 md:col-span-3">
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.15em]">Responsibilities</p>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{project.responsibilities}</p>
+                </div>
+              )}
+            </div>
+          )}
         </div>
 
-        {/* ── Blocks ── */}
-        <div className="mx-auto mt-16 flex w-full max-w-[1400px] flex-col gap-8 px-4 sm:px-6 md:mt-24 md:gap-16 md:px-10">
-          {project.blocks?.map((block, i) => renderBlock(block, i))}
-        </div>
+        {/* ── Problem ── */}
+        {project.problem && (
+          <ContentSection label="Problem" body={project.problem} tinted />
+        )}
 
+        {/* ── Objectives ── */}
+        {project.objectives && (
+          <ContentSection label="Objectives" body={project.objectives} />
+        )}
+
+        {/* ── Progress ── */}
+        {project.progress && (
+          <ContentSection label="Progress" body={project.progress} tinted />
+        )}
+
+        {/* ── Image blocks ── */}
+        {project.blocks && project.blocks.length > 0 && (
+          <div className="mx-auto mt-16 flex w-full max-w-[1400px] flex-col gap-6 px-4 sm:px-6 md:mt-24 md:gap-10 md:px-10">
+            {project.blocks.map((block, i) => renderBlock(block, i))}
+          </div>
+        )}
 
         {/* ── Next project ── */}
-        <div className="mx-auto mt-16 w-full max-w-[1400px] border-t border-border px-4 pt-8 sm:px-6 md:mt-32 md:px-10 md:pt-16">
+        <div className="mx-auto mt-16 w-full max-w-[1400px] border-t border-border px-4 pt-8 pb-16 sm:px-6 md:mt-32 md:px-10 md:pt-16 md:pb-32">
           <Link
             href={`/projetos/${next.slug}`}
             className="group flex flex-col gap-3 transition-opacity hover:opacity-90"
@@ -237,12 +267,14 @@ export default async function ProjectPage({
             <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
               Próximo projeto
             </span>
-            <span className="font-display flex flex-wrap items-center gap-3 text-[clamp(2rem,8vw,7rem)] leading-[1] tracking-tight transition-colors group-hover:text-accent md:gap-4">
+            <span className="font-display flex flex-wrap items-center gap-3 leading-[1] tracking-tight transition-colors group-hover:text-accent md:gap-4"
+              style={{ fontSize: "clamp(2rem, 8vw, 7rem)" }}>
               {next.title}
               <ArrowUpRight className="h-8 w-8 sm:h-12 sm:w-12 md:h-20 md:w-20" />
             </span>
           </Link>
         </div>
+
       </main>
       <Footer />
     </>

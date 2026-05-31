@@ -17,6 +17,11 @@ export type Project = {
   description: string;
   coverImage: string;
   size?: "large" | "small";
+  role?: string;
+  responsibilities?: string;
+  problem?: string;
+  objectives?: string;
+  progress?: string;
   blocks?: Block[];
 };
 
@@ -31,26 +36,13 @@ export const projects: Project[] = [
       "Campanha Orange Friday em parceria com o Banco Inter — descontos exclusivos para clientes Acerto, com pesquisa de benchmarking e interface orientada por dados.",
     coverImage: `/inter-capa.png`,
     size: "large",
+    role: "Product Designer",
+    responsibilities: "Interface design, benchmarking de competidores e desenvolvimento da campanha Orange Friday.",
+    problem: "A Acerto precisava de uma campanha de Black Friday que se destacasse no mercado financeiro, conectando a identidade do banco Inter com descontos exclusivos para seus clientes.",
+    objectives: "Criar uma campanha Orange Friday que comunicasse claramente os benefícios exclusivos para clientes Acerto, com uma interface orientada por dados e métricas de conversão.",
+    progress: "Iniciamos o projeto com um benchmarking de vários competidores diretos e indiretos, analisando a interface e a organização visual dos elementos para embasar as decisões de design.",
     blocks: [
       { type: "image-full", src: `${BASE}/2024/04/9.png`, alt: "Inter — hero" },
-      {
-        type: "text-bilingual",
-        ptTitle: "Objetivos",
-        enTitle: "Goals",
-        ptBody:
-          "A Acerto realizou uma campanha de Black Friday em parceria com o banco Inter, a Orange Friday, no qual disponibilizamos descontos exclusivos nesse período.",
-        enBody:
-          "Acerto carried out a Black Friday campaign in partnership with Inter bank called Orange Friday, in which exclusive discounts were offered for a limited time.",
-      },
-      {
-        type: "text-bilingual",
-        ptTitle: "Pesquisa",
-        enTitle: "Research",
-        ptBody:
-          "Iniciamos o projeto com um benchmarking de vários competidores diretos e indiretos, analisando a interface e a organização visual dos elementos.",
-        enBody:
-          "We started the project with a benchmarking of various direct and indirect competitors to analyze the interface and the visual organization of the elements.",
-      },
       { type: "image-full", src: `${BASE}/2025/03/PESQUISA-WEB.png`, alt: "Pesquisa web" },
       { type: "image-full", src: `${BASE}/2025/03/2-2-1.png`, alt: "Interface 1" },
       { type: "image-full", src: `${BASE}/2025/03/3.png`, alt: "Interface 2" },
@@ -66,8 +58,12 @@ export const projects: Project[] = [
       "No EFÍ Bank, atuei como Marketing Product Designer com foco em meios de pagamento. Desenvolvi campanhas visuais para Pix e Bolix — desde posts e carrosséis de onboarding até e-mails transacionais, cartões e materiais de parceiros.",
     coverImage: `${BASE}/2025/07/capa-efi-2.png`,
     size: "small",
+    role: "Marketing Product Designer",
+    responsibilities: "Campanhas visuais para Pix e Bolix, posts e carrosséis de onboarding, e-mails transacionais, cartões e materiais de parceiros.",
+    problem: "O EFÍ Bank precisava comunicar de forma clara e eficiente seus meios de pagamento — Pix e Bolix — para novos e atuais clientes, mantendo consistência visual em todos os touchpoints.",
+    objectives: "Desenvolver um conjunto de materiais visuais coesos que acelerassem o onboarding dos clientes e aumentassem a adoção dos meios de pagamento da plataforma.",
+    progress: "Estruturei um fluxo de criação que partia da identidade visual do EFÍ Bank e se desdobrava em diferentes formatos: posts, carrosséis, e-mails e materiais para parceiros.",
     blocks: [
-      { type: "text-section", title: "Campanhas focadas em meios de pagamento no EFÍ Bank" },
       { type: "image-full", src: `${BASE}/2025/08/Efi-cover-1.png`, alt: "EFI Cover" },
       { type: "image-small", src: `${BASE}/2025/07/logo-laranja-01-6.png`, alt: "Logo EFI" },
       {
@@ -112,8 +108,14 @@ export const projects: Project[] = [
       "Interface da maior plataforma de criptoativos da América Latina, com foco em fluxos de onboarding e trade para novos e experientes investidores.",
     coverImage: `${BASE}/2023/11/Capa-MB-1.png`,
     size: "small",
+    role: "Product Designer",
+    responsibilities: "Design de interface para fluxos de onboarding e trade, voltado para novos e experientes investidores.",
+    problem: "A maior plataforma de criptoativos da América Latina precisava simplificar a experiência de entrada para novos usuários sem comprometer a profundidade exigida por investidores experientes.",
+    objectives: "Redesenhar os fluxos de onboarding e trade para reduzir a fricção de entrada, aumentar a conversão e manter a confiança de quem já opera na plataforma.",
+    progress: "Mapeamos os principais pontos de abandono no funil de onboarding e realizamos testes com usuários de diferentes perfis para validar as soluções de interface propostas.",
     blocks: [
       { type: "image-full", src: "/mb-cloud.png", alt: "Mercado Bitcoin" },
+      { type: "image-full", src: "/mb-case.png", alt: "Mercado Bitcoin case" },
     ],
   },
   {
@@ -125,27 +127,16 @@ export const projects: Project[] = [
       "Case study completo: redesign de website para uma agência em transição — da pesquisa UX com survey e affinity mapping até o MVP final.",
     coverImage: `${BASE}/2020/11/Grupo-44-1024x683.jpg`,
     size: "large",
+    role: "UX/UI Designer",
+    responsibilities: "Pesquisa com usuários, affinity mapping, criação de personas, análise de competidores, wireframe e MVP do website.",
+    problem: "A Hugny estava se preparando para evoluir e dar o próximo passo. Precisavam de um website que representasse essa mudança de negócio e maturidade da empresa — alinhando expectativas do negócio com as necessidades dos usuários.",
+    objectives: "Criar um website que comunicasse a nova identidade da Hugny, com foco em experiências personalizadas e humanas, equilibrando os objetivos de negócio com os dados da pesquisa de usuário.",
+    progress: "Iniciamos com um kickoff para entender as dores do cliente. Um survey gerou insights que alimentaram um affinity mapping, levando à criação de personas. Também realizamos um Lightning Demo onde o cliente apresentou referências visuais.",
     blocks: [
-      { type: "text-section", title: "Hugny case study" },
       { type: "image-full", src: `${BASE}/2020/11/note-home2-1-1024x674.png`, alt: "Hugny hero" },
-      {
-        type: "text-section",
-        title: "Sobre a empresa",
-        body: "Nosso objetivo é criar experiências para que os clientes se sintam próximos, mesmo que através de canais digitais. Experiências que sejam personalizadas, únicas, mas que tenham significado e sejam humanas. Fazemos isso através de estratégia, tecnologia e comunicação, pensando na diversidade crescente e sabendo que criar vínculos com os clientes, é a única forma de ter relacionamentos de longo prazo.",
-      },
-      {
-        type: "text-section",
-        title: "Problema",
-        body: "A Hugny estava se preparando para evoluir e dar o próximo passo. Com isso, precisavam de um website que representasse essa mudança de negócio e maturidade da empresa — alinhando expectativas do negócio com as necessidades dos usuários.",
-      },
       {
         type: "toolbox",
         items: ["Survey", "Affinity Mapping", "Persona", "Análise de competidores", "Customer Journey"],
-      },
-      {
-        type: "text-section",
-        title: "Processo",
-        body: "Iniciamos com um kickoff para entender as dores do cliente. Em seguida, um survey gerou insights que alimentaram um affinity mapping, levando à criação de personas. Também realizamos um Lightning Demo onde o cliente apresentou sites de referência.",
       },
       { type: "text-section", title: "Survey" },
       {
@@ -220,27 +211,14 @@ export const projects: Project[] = [
       "App mobile de carteira cripto com Design System completo, interfaces funcionais e protótipos interativos — desenvolvido durante o curso de Figma da @feux.",
     coverImage: `${BASE}/2025/06/Capa-5.png`,
     size: "small",
+    role: "UI Designer",
+    responsibilities: "Design System completo, interfaces funcionais para app mobile e landing page responsiva.",
+    problem: "Criar um aplicativo de carteira cripto que fosse intuitivo para usuários iniciantes sem abrir mão da profundidade necessária para quem já opera com criptomoedas.",
+    objectives: "Desenvolver um Design System robusto e um app mobile com interfaces funcionais e protótipos interativos, seguindo as melhores práticas do mercado de criptoativos.",
+    progress: "Iniciei com um benchmarking de competidores e referências de mercado, analisando interfaces de partes específicas dos produtos e a interação entre os elementos de UI.",
     blocks: [
       { type: "image-small", src: `${BASE}/2025/06/Logo.png`, alt: "Crype logo" },
       { type: "image-full", src: `${BASE}/2025/06/telass.png`, alt: "Crype telas" },
-      {
-        type: "text-bilingual",
-        ptTitle: "Objetivos",
-        enTitle: "Goals",
-        ptBody:
-          "Este projeto foi desenvolvido durante o Curso de Figma, ministrado pela @feux, uma formação completa voltada para a criação de um Design System, interfaces funcionais e protótipos interativos. A entrega incluiu o desenvolvimento completo de um aplicativo mobile e uma landing page responsiva, seguindo os princípios do DS.",
-        enBody:
-          "This project was developed during the Figma Course, led by @feux, a comprehensive program focused on building Design Systems, functional interfaces, and interactive prototypes. The final delivery included the complete development of a mobile app and a responsive landing page, following the core principles of the Design System.",
-      },
-      {
-        type: "text-bilingual",
-        ptTitle: "Pesquisa",
-        enTitle: "Research",
-        ptBody:
-          "Iniciei o projeto com um benchmarking de alguns competidores e referências de mercado, analisando a interface de partes específicas dos websites e a interação dos elementos entre si.",
-        enBody:
-          "I started the project with a benchmark analysis of some competitors and market references, examining specific parts of their websites and the interaction between interface elements.",
-      },
       { type: "image-full", src: `${BASE}/2025/06/Pesquisa-crype-.png`, alt: "Pesquisa Crype" },
       { type: "image-full", src: `${BASE}/2025/06/Primeiro-3.png`, alt: "Crype tela 1" },
       { type: "image-full", src: `${BASE}/2025/06/Segundo-3.png`, alt: "Crype tela 2" },
