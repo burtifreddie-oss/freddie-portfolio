@@ -107,7 +107,7 @@ export function AboutExperience() {
 
             {/* Experiência */}
             <div id="experiencia" className="border-t border-border py-16 md:py-24">
-              <h2 className="text-2xl font-light leading-[1] tracking-tight" style={{ color: "#888888" }}>
+              <h2 className="text-2xl font-light leading-[1] tracking-tight text-muted-foreground">
                 Experiência
               </h2>
 
@@ -144,7 +144,7 @@ export function AboutExperience() {
 
             {/* Educação */}
             <div className="pb-16 pt-16 md:pb-24 md:pt-16">
-              <h2 className="text-2xl font-light leading-[1] tracking-tight" style={{ color: "#888888" }}>
+              <h2 className="text-2xl font-light leading-[1] tracking-tight text-muted-foreground">
                 Educação
               </h2>
               <ul className="mt-16">

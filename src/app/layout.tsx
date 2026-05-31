@@ -57,7 +57,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={`antialiased ${inter.variable}`}>
+    <html lang="pt-BR" className={`light antialiased ${inter.variable}`}>
       <body className="min-h-screen bg-background font-sans text-foreground grain">
         <MotionProvider>
           <SmoothScrollProvider>
