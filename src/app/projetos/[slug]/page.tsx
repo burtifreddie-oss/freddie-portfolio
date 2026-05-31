@@ -204,15 +204,16 @@ export default async function ProjectPage({
           </h1>
 
           {/* Cover image */}
-          <div className="mt-8 w-full overflow-hidden rounded-2xl md:mt-12">
+          <div className="mt-8 w-full overflow-hidden rounded-2xl md:mt-12" style={{ maxHeight: 540 }}>
             <Image
               src={project.coverImage}
               alt={project.title}
               width={1400}
-              height={787}
+              height={540}
               quality={90}
               priority
-              className="h-auto w-full object-cover"
+              className="h-full w-full object-cover"
+              style={{ maxHeight: 540 }}
               sizes="(max-width: 768px) 100vw, (max-width: 1400px) 100vw, 1400px"
             />
           </div>
