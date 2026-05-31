@@ -145,7 +145,7 @@ function HeroCard({
               className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
             />
           ) : (
-            <div className="absolute inset-0 bg-gradient-to-br from-zinc-800 to-black" />
+            <div className="absolute inset-0 bg-muted" />
           )}
         </div>
 
@@ -209,7 +209,7 @@ export function Hero() {
       <m.div
         ref={cardRef}
         style={{ scale, opacity, borderRadius }}
-        className="relative flex min-h-[100svh] w-full flex-col justify-center overflow-hidden pb-24 pt-28 md:pb-40 md:pt-32"
+        className="relative flex min-h-[100svh] w-full flex-col justify-center overflow-hidden bg-background pb-24 pt-28 md:pb-40 md:pt-32"
       >
         <div className="mx-auto grid w-full max-w-[1400px] grid-cols-1 items-center gap-12 px-5 sm:px-6 md:grid-cols-12 md:gap-10 md:px-10 lg:gap-16">
 
