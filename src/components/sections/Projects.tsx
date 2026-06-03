@@ -6,26 +6,23 @@ import { projects } from "@/lib/projects";
 import { ProjectCard } from "@/components/ProjectCard";
 
 export function Projects() {
+  const featured = projects.slice(0, 4);
+
   return (
-    <section id="projetos" className="relative w-full py-16 md:py-40">
+    <section id="projetos" className="relative w-full py-16 md:py-24">
 
       {/* Cabeçalho */}
-      <div className="mx-auto mb-10 flex w-full max-w-[1400px] items-end justify-between gap-6 px-5 sm:px-6 md:mb-20 md:px-10">
+      <div className="mx-auto mb-8 flex w-full max-w-[1400px] items-end justify-between gap-6 px-5 sm:px-6 md:mb-12 md:px-10">
         <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="flex flex-col gap-3"
+          className="flex flex-col gap-2"
         >
           <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-            01 — Projetos selecionados
+            Projetos selecionados
           </span>
-          <h2 className="font-section text-[clamp(2.2rem,6vw,5rem)] leading-[1] tracking-tight">
-            Trabalhos
-            <br />
-            recentes.
-          </h2>
         </m.div>
         <m.span
           initial={{ width: 0 }}
@@ -36,22 +33,21 @@ export function Projects() {
         />
       </div>
 
-      {/* Grid de cards */}
-      <div className="mx-auto grid w-full max-w-[1400px] grid-cols-1 gap-5 px-5 sm:grid-cols-2 sm:gap-6 sm:px-6 md:px-10 md:gap-8 lg:gap-10">
-        {projects.map((project, i) => (
-          <ProjectCard
-            key={project.slug}
-            project={project}
-            index={i}
-            className={
-              project.size === "large" && i === 0 ? "sm:col-span-2" : ""
-            }
-          />
-        ))}
+      {/* Grid — 4 colunas no desktop */}
+      <div className="mx-auto w-full max-w-[1400px] px-5 sm:px-6 md:px-10">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4 lg:gap-6">
+          {featured.map((project, i) => (
+            <ProjectCard
+              key={project.slug}
+              project={project}
+              index={i}
+            />
+          ))}
+        </div>
       </div>
 
       {/* CTA Behance */}
-      <div className="mx-auto mt-10 flex w-full max-w-[1400px] justify-center px-5 sm:px-6 md:mt-16 md:px-10">
+      <div className="mx-auto mt-10 flex w-full max-w-[1400px] justify-center px-5 sm:px-6 md:mt-14 md:px-10">
         <a
           href="https://www.behance.net/freddieab"
           target="_blank"
