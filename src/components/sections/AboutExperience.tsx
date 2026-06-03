@@ -15,9 +15,8 @@ export function AboutExperience() {
   return (
     <section
       id="sobre"
-      className="relative w-full px-4 sm:px-6 md:px-10"
+      className="relative w-full px-4 sm:px-6 md:px-10 bg-[#242424] text-[#f5f5f0]"
       style={{
-        backgroundColor: "#242424",
         "--background": "#242424",
         "--foreground": "#f5f5f0",
         "--muted-foreground": "#888888",
