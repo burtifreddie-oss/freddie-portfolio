@@ -120,15 +120,7 @@ function HeroCard({
   index: number;
 }) {
   return (
-    <m.div
-      initial={{ opacity: 0, y: 24 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{
-        delay: 0.6 + index * 0.1,
-        duration: 0.7,
-        ease: [0.25, 0.46, 0.45, 0.94],
-      }}
-    >
+    <div>
       <Link
         href={`/projetos/${project.slug}`}
         className="group block overflow-hidden rounded-xl border border-border bg-card transition-colors duration-300 hover:border-accent/40"
@@ -165,7 +157,7 @@ function HeroCard({
           </span>
         </div>
       </Link>
-    </m.div>
+    </div>
   );
 }
 
@@ -189,20 +181,12 @@ export function Hero() {
           {/* ── Texto (esquerda) ── */}
           <div className="flex flex-col gap-4 md:col-span-5 md:gap-6">
 
-            <m.span
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.1, duration: 0.5 }}
-              className="text-sm font-light uppercase tracking-[0.2em] text-muted-foreground"
-            >
+            <span className="text-sm font-light uppercase tracking-[0.2em] text-muted-foreground">
               <ScrambleText text="Olá, sou o Freddie" />
-            </m.span>
+            </span>
 
-            <h1 className="font-display overflow-hidden leading-[1.05] tracking-normal">
-              <m.span
-                initial={{ y: 80, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.2, duration: 0.9, ease: [0.25, 0.46, 0.45, 0.94] }}
+            <h1 className="font-display leading-[1.05] tracking-normal">
+              <span
                 className="block text-[clamp(1.4rem,6vw,2rem)]"
                 style={{ fontWeight: 500 }}
               >
@@ -215,24 +199,14 @@ export function Hero() {
                 >
                   claras e memoráveis.
                 </span>
-              </m.span>
+              </span>
             </h1>
 
-            <m.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-              className="max-w-sm text-lg font-normal leading-relaxed text-muted-foreground sm:max-w-md"
-            >
+            <p className="max-w-sm text-lg font-normal leading-relaxed text-muted-foreground sm:max-w-md">
               Movido pela curiosidade e resolução de problemas, busco criar designs transcendendo a estética com a funcionalidade.
-            </m.p>
+            </p>
 
-            <m.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
-              className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4"
-            >
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
               <Button asChild variant="accent" size="lg" className="w-full sm:w-auto">
                 <a
                   href="#projetos"
@@ -255,7 +229,7 @@ export function Hero() {
               <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
                 <a href="#contato">Entrar em contato</a>
               </Button>
-            </m.div>
+            </div>
 
           </div>
 
@@ -271,12 +245,7 @@ export function Hero() {
         </div>
 
         {/* Scroll indicator */}
-        <m.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.6 }}
-          className="absolute bottom-24 left-1/2 hidden -translate-x-1/2 items-center gap-2 text-xs font-light uppercase tracking-[0.18em] text-muted-foreground md:flex"
-        >
+        <div className="absolute bottom-24 left-1/2 hidden -translate-x-1/2 items-center gap-2 text-xs font-light uppercase tracking-[0.18em] text-muted-foreground md:flex">
           <span>Scroll</span>
           <m.span
             animate={{ y: [0, 6, 0] }}
@@ -284,7 +253,7 @@ export function Hero() {
           >
             <ArrowDown className="h-4 w-4" />
           </m.span>
-        </m.div>
+        </div>
       </div>
     </section>
   );
