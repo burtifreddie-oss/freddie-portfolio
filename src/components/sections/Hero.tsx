@@ -49,54 +49,45 @@ export function Hero() {
   return (
     <section className="relative flex min-h-[100svh] flex-col bg-background">
 
-      {/* ── Barra superior ── */}
-      <div className="mx-auto flex w-full max-w-[1400px] items-center justify-between px-5 pt-28 sm:px-6 md:px-10 md:pt-36">
-        <span className="text-xs font-light uppercase tracking-[0.22em] text-muted-foreground">
-          Designer Visual
-        </span>
-        <span className="text-xs font-light uppercase tracking-[0.22em] text-muted-foreground">
+      {/* ── Topo: tagline esquerda / localização direita ── */}
+      <div className="mx-auto flex w-full max-w-[1400px] items-start justify-between gap-8 px-5 pt-28 sm:px-6 md:px-10 md:pt-36">
+        <p className="max-w-[280px] text-sm font-light leading-relaxed text-muted-foreground sm:max-w-xs">
+          Movido pela curiosidade e resolução de problemas, busco criar designs
+          que transcendem a estética com funcionalidade.
+        </p>
+        <span className="shrink-0 text-xs font-light uppercase tracking-[0.22em] text-muted-foreground">
           São Paulo — 2025
         </span>
       </div>
 
-      {/* ── Nome em destaque ── */}
-      <div className="flex flex-1 flex-col justify-center px-4 py-6 sm:px-6 md:px-10">
-        <div className="mx-auto w-full max-w-[1400px]">
-          <HoverTooltip>
-            <h1
-              className="font-display font-bold leading-[0.88] tracking-tight text-foreground"
-              style={{ fontSize: "clamp(4.5rem, 18vw, 240px)" }}
-            >
-              <span className="block">FREDDIE</span>
-              <span className="block">BURTI.</span>
-            </h1>
-          </HoverTooltip>
+      {/* ── Espaçador ── */}
+      <div className="flex-1" />
+
+      {/* ── Nome em destaque — uma linha, na base ── */}
+      <div className="w-full overflow-hidden px-4 pb-4 sm:px-6 md:px-8">
+        <HoverTooltip>
+          <h1
+            className="block whitespace-nowrap font-display font-bold leading-[0.85] tracking-tight text-foreground"
+            style={{ fontSize: "clamp(3rem, 12.5vw, 210px)" }}
+          >
+            FREDDIE BURTI.
+          </h1>
+        </HoverTooltip>
+
+        {/* Scroll indicator abaixo do nome */}
+        <div className="mt-5 flex items-center gap-2 text-xs font-light uppercase tracking-[0.18em] text-muted-foreground md:mt-6">
+          <span>Scroll</span>
+          <m.span
+            animate={{ y: [0, 5, 0] }}
+            transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <ArrowDown className="h-3.5 w-3.5" />
+          </m.span>
         </div>
       </div>
 
-      {/* ── Barra inferior ── */}
-      <div className="mx-auto w-full max-w-[1400px] px-5 pb-12 sm:px-6 md:pb-16 md:px-10">
-        <div className="flex items-end justify-between gap-8">
-
-          {/* Tagline */}
-          <p className="max-w-sm text-sm font-light leading-relaxed text-muted-foreground sm:max-w-md sm:text-base">
-            Movido pela curiosidade e resolução de problemas, busco criar designs
-            que transcendem a estética com funcionalidade.
-          </p>
-
-          {/* Indicador de scroll */}
-          <div className="hidden shrink-0 items-center gap-2 text-xs font-light uppercase tracking-[0.18em] text-muted-foreground md:flex">
-            <span>Scroll</span>
-            <m.span
-              animate={{ y: [0, 6, 0] }}
-              transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <ArrowDown className="h-4 w-4" />
-            </m.span>
-          </div>
-
-        </div>
-      </div>
+      {/* ── Margem inferior ── */}
+      <div className="pb-10 md:pb-14" />
 
     </section>
   );
