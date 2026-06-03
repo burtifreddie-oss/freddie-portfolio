@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { m, AnimatePresence } from "framer-motion";
+import { useRef, useState } from "react";
+import { m, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 
 /* ── Tooltip on name ── */
@@ -46,9 +46,20 @@ function HoverTooltip({ children }: { children: React.ReactNode }) {
 
 /* ── Hero ── */
 export function Hero() {
-  return (
-    <section className="relative flex min-h-[100svh] flex-col bg-background">
+  const sectionRef = useRef<HTMLElement>(null);
 
+  // Parallax: nome sobe ~12% ao scrollar a hero para fora
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const nameY = useTransform(scrollYProgress, [0, 1], ["0%", "-12%"]);
+
+  return (
+    <section
+      ref={sectionRef}
+      className="relative flex min-h-[100svh] flex-col bg-background"
+    >
       {/* ── Topo: tagline esquerda / localização direita ── */}
       <div className="mx-auto flex w-full max-w-[1400px] items-start justify-between gap-8 px-5 pt-28 sm:px-6 md:px-10 md:pt-36">
         <p className="max-w-[280px] text-sm font-light leading-relaxed text-muted-foreground sm:max-w-xs">
@@ -63,18 +74,21 @@ export function Hero() {
       {/* ── Espaçador ── */}
       <div className="flex-1" />
 
-      {/* ── Nome em destaque — uma linha, na base ── */}
-      <div className="w-full overflow-hidden px-4 pb-4 sm:px-6 md:px-8">
+      {/* ── Nome em destaque — dentro do grid, com parallax ── */}
+      <m.div
+        style={{ y: nameY }}
+        className="mx-auto w-full max-w-[1400px] overflow-hidden px-5 pb-4 sm:px-6 md:px-10"
+      >
         <HoverTooltip>
           <h1
             className="block whitespace-nowrap font-display font-bold leading-[0.85] tracking-tight text-foreground"
-            style={{ fontSize: "clamp(3rem, 12.5vw, 210px)" }}
+            style={{ fontSize: "clamp(2.8rem, 10.5vw, 175px)" }}
           >
             FREDDIE BURTI.
           </h1>
         </HoverTooltip>
 
-        {/* Scroll indicator abaixo do nome */}
+        {/* Scroll indicator */}
         <div className="mt-5 flex items-center gap-2 text-xs font-light uppercase tracking-[0.18em] text-muted-foreground md:mt-6">
           <span>Scroll</span>
           <m.span
@@ -84,11 +98,10 @@ export function Hero() {
             <ArrowDown className="h-3.5 w-3.5" />
           </m.span>
         </div>
-      </div>
+      </m.div>
 
       {/* ── Margem inferior ── */}
       <div className="pb-10 md:pb-14" />
-
     </section>
   );
 }
