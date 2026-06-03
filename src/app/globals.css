@@ -1,5 +1,22 @@
 @import "tailwindcss";
 
+/* ── Seção escura fixa (independente do tema) ── */
+.section-dark {
+  --background:        #1D1D1D;
+  --foreground:        #f5f5f0;
+  --muted-foreground:  #888888;
+  --border:            #333333;
+  --card:              #272727;
+  /* Tailwind v4 usa --color-* internamente */
+  --color-background:        #1D1D1D;
+  --color-foreground:        #f5f5f0;
+  --color-muted-foreground:  #888888;
+  --color-border:            #333333;
+  --color-card:              #272727;
+  background-color: #1D1D1D;
+  color: #f5f5f0;
+}
+
 /* ── Dark theme (default) ── */
 :root {
   --background: #0a0a0a;

@@ -15,14 +15,7 @@ export function AboutExperience() {
   return (
     <section
       id="sobre"
-      className="relative w-full px-4 sm:px-6 md:px-10 bg-[#242424] text-[#f5f5f0]"
-      style={{
-        "--background": "#242424",
-        "--foreground": "#f5f5f0",
-        "--muted-foreground": "#888888",
-        "--border": "#3a3a3a",
-        "--card": "#1e1e1e",
-      } as React.CSSProperties}
+      className="section-dark relative w-full px-4 sm:px-6 md:px-10"
     >
       <div className="mx-auto w-full max-w-[1400px]">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-12 md:gap-16">

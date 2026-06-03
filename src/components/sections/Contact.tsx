@@ -13,7 +13,7 @@ export function Contact() {
   return (
     <section
       id="contato"
-      className="relative z-20 w-full bg-background px-4 pb-8 pt-0 sm:px-6 md:px-10 md:pb-12"
+      className="section-dark relative w-full px-4 pb-8 pt-0 sm:px-6 md:px-10 md:pb-12"
     >
       <m.div
         initial={{ opacity: 0, y: 40 }}
