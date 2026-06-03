@@ -15,7 +15,7 @@ export function AboutExperience() {
   return (
     <section
       id="sobre"
-      className="relative z-20 w-full bg-background px-4 sm:px-6 md:rounded-t-[2.5rem] md:px-10"
+      className="relative w-full bg-background px-4 sm:px-6 md:px-10"
     >
       <div className="mx-auto w-full max-w-[1400px]">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-12 md:gap-16">

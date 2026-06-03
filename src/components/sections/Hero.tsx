@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { m, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { projects } from "@/lib/projects";
@@ -172,45 +172,18 @@ function HeroCard({
 /* ── Hero ── */
 export function Hero() {
   const [idx, setIdx] = useState(0);
-  const [vh, setVh] = useState(800);
-  const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const t = setInterval(() => setIdx((i) => (i + 1) % CYCLE.length), 2200);
     return () => clearInterval(t);
   }, []);
 
-  // Inicia como true para evitar flash de opacity=0 no mobile antes da hidratação
-  const [isMobile, setIsMobile] = useState(true);
-
-  useEffect(() => {
-    const check = () => {
-      setVh(window.innerHeight);
-      setIsMobile(window.innerWidth < 768);
-    };
-    check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
-  }, []);
-
-  const { scrollY } = useScroll();
-
-  const scale        = useTransform(scrollY, [0, vh],          isMobile ? [1, 1]    : [1, 0.88]);
-  const opacity      = useTransform(scrollY, [0, vh * 0.65],   isMobile ? [1, 1]    : [1, 0]);
-  const borderRadius = useTransform(scrollY, [0, vh * 0.25],   isMobile ? [0, 0]    : [0, 32]);
-
   const featured = projects.slice(0, 4);
 
   return (
-    /* ── Sticky wrapper — fica fixo enquanto a próxima seção desliza por cima ── */
-    <section className="md:sticky top-0 z-10 min-h-[100svh]">
+    <section className="min-h-[100svh]">
+      <div className="relative flex min-h-[100svh] w-full flex-col justify-center overflow-hidden bg-background pb-24 pt-28 md:pb-40 md:pt-32">
 
-      {/* ── Card que encolhe e desaparece com o scroll ── */}
-      <m.div
-        ref={cardRef}
-        style={{ scale, opacity, borderRadius }}
-        className="relative flex min-h-[100svh] w-full flex-col justify-center overflow-hidden bg-background pb-24 pt-28 md:pb-40 md:pt-32"
-      >
         <div className="mx-auto grid w-full max-w-[1400px] grid-cols-1 items-center gap-12 px-5 sm:px-6 md:grid-cols-12 md:gap-10 md:px-10 lg:gap-16">
 
           {/* ── Texto (esquerda) ── */}
@@ -312,7 +285,7 @@ export function Hero() {
             <ArrowDown className="h-4 w-4" />
           </m.span>
         </m.div>
-      </m.div>
+      </div>
     </section>
   );
 }
