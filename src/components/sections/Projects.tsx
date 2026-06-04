@@ -6,7 +6,7 @@ import { projects } from "@/lib/projects";
 import { ProjectCard } from "@/components/ProjectCard";
 
 export function Projects() {
-  const featured = projects.slice(0, 4);
+  const featured = projects;
 
   return (
     <section id="projetos" className="relative w-full py-16 md:py-24">
@@ -33,9 +33,9 @@ export function Projects() {
         />
       </div>
 
-      {/* Grid — 4 colunas no desktop */}
+      {/* Grid — 3 colunas no desktop */}
       <div className="mx-auto w-full max-w-[1400px] px-5 sm:px-6 md:px-10">
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-6">
           {featured.map((project, i) => (
             <ProjectCard
               key={project.slug}
