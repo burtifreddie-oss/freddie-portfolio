@@ -3,41 +3,15 @@
 import { useEffect, useState } from "react";
 import { m } from "framer-motion";
 
-// Variável de módulo — persiste durante toda a sessão do JS no browser.
-// Evita o flash dos painéis ao voltar para a home dentro da mesma navegação.
-let introAlreadyShown = false;
-
 export function PageIntro() {
-  // Inicia como "done" se já mostrou o intro nesta sessão JS
-  const [phase, setPhase] = useState<"loading" | "reveal" | "done">(
-    introAlreadyShown ? "done" : "loading"
-  );
+  const [phase, setPhase] = useState<"loading" | "reveal" | "done">("loading");
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    // Se a variável já está marcada, não faz nada
-    if (introAlreadyShown) {
-      setPhase("done");
-      return;
-    }
-
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      introAlreadyShown = true;
       setPhase("done");
       return;
     }
-
-    // Verifica se já foi exibido nesta sessão do navegador
-    const visited = sessionStorage.getItem("fb_intro_shown");
-    if (visited) {
-      introAlreadyShown = true;
-      setPhase("done");
-      return;
-    }
-
-    // Primeira visita — marca e exibe
-    introAlreadyShown = true;
-    sessionStorage.setItem("fb_intro_shown", "1");
 
     // Contador 0 → 100 em ~2s
     let current = 0;
