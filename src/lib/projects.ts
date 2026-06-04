@@ -106,7 +106,7 @@ export const projects: Project[] = [
       "Interface da maior plataforma de criptoativos da América Latina, com foco em fluxos de onboarding e trade para novos e experientes investidores.",
     coverImage: `/capa-mb-nova.png`,
     size: "small",
-    role: "Product Designer",
+    role: "Designer",
     responsibilities: "Design de interface para fluxos de onboarding e trade, voltado para novos e experientes investidores.",
     problem: "A maior plataforma de criptoativos da América Latina precisava simplificar a experiência de entrada para novos usuários sem comprometer a profundidade exigida por investidores experientes.",
     objectives: "Criar uma landing page institucional para o MB Cloud — solução white-label do Mercado Bitcoin que permite empresas como bancos, fintechs e corretoras oferecerem criptoativos para seus próprios clientes. O projeto teve foco em comunicar credibilidade e proposta de valor para um público corporativo.",
