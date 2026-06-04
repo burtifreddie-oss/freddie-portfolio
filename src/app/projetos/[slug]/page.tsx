@@ -102,7 +102,7 @@ function BlockTextSection({ title, body }: { title: string; body?: string }) {
 function BlockToolbox({ items }: { items: string[] }) {
   return (
     <div className="py-8 md:py-12">
-      <h2 className="font-display mb-6 text-xl font-semibold tracking-tight sm:text-2xl">Toolbox</h2>
+      <h2 className="font-display mb-6 text-xl font-semibold tracking-tight sm:text-2xl">Ferramentas</h2>
       <div className="flex flex-wrap gap-3">
         {items.map((item) => (
           <span
@@ -223,13 +223,13 @@ export default async function ProjectPage({
             <div className="mt-8 grid grid-cols-2 gap-8 border-t border-border pt-8 md:mt-12 md:grid-cols-4 md:gap-12 md:pt-12">
               {project.role && (
                 <div>
-                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.15em]">Role</p>
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.15em]">Função</p>
                   <p className="text-sm leading-relaxed text-muted-foreground">{project.role}</p>
                 </div>
               )}
               {project.responsibilities && (
                 <div className="col-span-1 md:col-span-3">
-                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.15em]">Responsibilities</p>
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.15em]">Responsabilidades</p>
                   <p className="text-sm leading-relaxed text-muted-foreground">{project.responsibilities}</p>
                 </div>
               )}
@@ -239,17 +239,17 @@ export default async function ProjectPage({
 
         {/* ── Problem ── */}
         {project.problem && (
-          <ContentSection label="Problem" body={project.problem} tinted />
+          <ContentSection label="Problema" body={project.problem} tinted />
         )}
 
         {/* ── Objectives ── */}
         {project.objectives && (
-          <ContentSection label="Objectives" body={project.objectives} />
+          <ContentSection label="Objetivos" body={project.objectives} />
         )}
 
         {/* ── Progress ── */}
         {project.progress && (
-          <ContentSection label="Progress" body={project.progress} tinted />
+          <ContentSection label="Andamento" body={project.progress} tinted />
         )}
 
         {/* ── Image blocks ── */}
