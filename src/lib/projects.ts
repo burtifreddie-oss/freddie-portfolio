@@ -65,7 +65,6 @@ export const projects: Project[] = [
     progress: "Estruturei um fluxo de criação que partia da identidade visual do EFÍ Bank e se desdobrava em diferentes formatos: posts, carrosséis, e-mails e materiais para parceiros.",
     blocks: [
       { type: "image-full", src: `${BASE}/2025/08/Efi-cover-1.png`, alt: "EFI Cover" },
-      { type: "image-small", src: `${BASE}/2025/07/logo-laranja-01-6.png`, alt: "Logo EFI" },
       {
         type: "image-row",
         cols: 3,
