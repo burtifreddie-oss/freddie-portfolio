@@ -34,7 +34,7 @@ export const projects: Project[] = [
     year: "2025",
     description:
       "Campanha Orange Friday em parceria com o Banco Inter — descontos exclusivos para clientes Acerto, com pesquisa de benchmarking e interface orientada por dados.",
-    coverImage: `/inter-capa.png`,
+    coverImage: `/capa-inter-nova.png`,
     size: "large",
     role: "Product Designer",
     responsibilities: "Interface design, benchmarking de competidores e desenvolvimento da campanha Orange Friday.",
@@ -42,6 +42,7 @@ export const projects: Project[] = [
     objectives: "Criar uma campanha Orange Friday que comunicasse claramente os benefícios exclusivos para clientes Acerto, com uma interface orientada por dados e métricas de conversão.",
     progress: "Iniciamos o projeto com um benchmarking de vários competidores diretos e indiretos, analisando a interface e a organização visual dos elementos para embasar as decisões de design.",
     blocks: [
+      { type: "image-full", src: `/capa-inter-nova.png`, alt: "Inter" },
       { type: "image-full", src: `${BASE}/2025/03/PESQUISA-WEB.png`, alt: "Pesquisa web" },
       { type: "text-section", title: "", body: "Após analises visuais da hierarquia de informação utilizada nos competidores diretos e indiretos, começamos a construir alguns wireframes para esboçar algumas ideias até chegarmos no resultado final" },
       { type: "image-full", src: `${BASE}/2025/03/2-2-1.png`, alt: "Interface 1" },
@@ -56,7 +57,7 @@ export const projects: Project[] = [
     year: "2024",
     description:
       "No EFÍ Bank, atuei como Marketing Product Designer com foco em meios de pagamento. Desenvolvi campanhas visuais para Pix e Bolix — desde posts e carrosséis de onboarding até e-mails transacionais, cartões e materiais de parceiros.",
-    coverImage: `${BASE}/2025/07/capa-efi-2.png`,
+    coverImage: `/capa-efi-nova.png`,
     size: "small",
     role: "Marketing Product Designer",
     responsibilities: "Campanhas visuais para Pix e Bolix, posts e carrosséis de onboarding, e-mails transacionais, cartões e materiais de parceiros.",
@@ -64,7 +65,7 @@ export const projects: Project[] = [
     objectives: "Desenvolver um conjunto de materiais visuais coesos que acelerassem o onboarding dos clientes e aumentassem a adoção dos meios de pagamento da plataforma.",
     progress: "Estruturei um fluxo de criação que partia da identidade visual do EFÍ Bank e se desdobrava em diferentes formatos: posts, carrosséis, e-mails e materiais para parceiros.",
     blocks: [
-      { type: "image-full", src: `${BASE}/2025/08/Efi-cover-1.png`, alt: "EFI Cover" },
+      { type: "image-full", src: `/capa-efi-nova.png`, alt: "EFÍ Bank" },
       {
         type: "image-row",
         cols: 3,
@@ -105,7 +106,7 @@ export const projects: Project[] = [
     year: "2022",
     description:
       "Interface da maior plataforma de criptoativos da América Latina, com foco em fluxos de onboarding e trade para novos e experientes investidores.",
-    coverImage: `${BASE}/2023/11/Capa-MB-1.png`,
+    coverImage: `/capa-mb-nova.png`,
     size: "small",
     role: "Product Designer",
     responsibilities: "Design de interface para fluxos de onboarding e trade, voltado para novos e experientes investidores.",
@@ -113,7 +114,7 @@ export const projects: Project[] = [
     objectives: "Redesenhar os fluxos de onboarding e trade para reduzir a fricção de entrada, aumentar a conversão e manter a confiança de quem já opera na plataforma.",
     progress: "Mapeamos os principais pontos de abandono no funil de onboarding e realizamos testes com usuários de diferentes perfis para validar as soluções de interface propostas.",
     blocks: [
-      { type: "image-full", src: "/mb-cloud.png", alt: "Mercado Bitcoin" },
+      { type: "image-full", src: `/capa-mb-nova.png`, alt: "Mercado Bitcoin" },
     ],
   },
 ];
