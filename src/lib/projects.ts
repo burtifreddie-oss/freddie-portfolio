@@ -109,8 +109,8 @@ export const projects: Project[] = [
     role: "Product Designer",
     responsibilities: "Design de interface para fluxos de onboarding e trade, voltado para novos e experientes investidores.",
     problem: "A maior plataforma de criptoativos da América Latina precisava simplificar a experiência de entrada para novos usuários sem comprometer a profundidade exigida por investidores experientes.",
-    objectives: "Redesenhar os fluxos de onboarding e trade para reduzir a fricção de entrada, aumentar a conversão e manter a confiança de quem já opera na plataforma.",
-    progress: "Mapeamos os principais pontos de abandono no funil de onboarding e realizamos testes com usuários de diferentes perfis para validar as soluções de interface propostas.",
+    objectives: "Criar uma landing page institucional para o MB Cloud — solução white-label do Mercado Bitcoin que permite empresas como bancos, fintechs e corretoras oferecerem criptoativos para seus próprios clientes. O projeto teve foco em comunicar credibilidade e proposta de valor para um público corporativo.",
+    progress: "Desenvolvi uma hierarquia de informação clara e uma linguagem visual voltada para decisores de negócio, transmitindo solidez tecnológica e confiança institucional em cada seção da página.",
     blocks: [
       { type: "image-full", src: `/mb-cloud-portfolio.png`, alt: "MB Cloud — Nova Landing Page do Mercado Bitcoin" },
     ],
