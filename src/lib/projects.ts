@@ -52,7 +52,7 @@ export const projects: Project[] = [
   {
     slug: "efi",
     title: "EFÍ",
-    category: "Interface / Produto",
+    category: "Campanhas",
     year: "2024",
     description:
       "No EFÍ Bank, atuei como Marketing Product Designer com foco em meios de pagamento. Desenvolvi campanhas visuais para Pix e Bolix — desde posts e carrosséis de onboarding até e-mails transacionais, cartões e materiais de parceiros.",
