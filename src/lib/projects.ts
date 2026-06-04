@@ -42,7 +42,6 @@ export const projects: Project[] = [
     objectives: "Criar uma campanha Orange Friday que comunicasse claramente os benefícios exclusivos para clientes Acerto, com uma interface orientada por dados e métricas de conversão.",
     progress: "Iniciamos o projeto com um benchmarking de vários competidores diretos e indiretos, analisando a interface e a organização visual dos elementos para embasar as decisões de design.",
     blocks: [
-      { type: "image-full", src: `${BASE}/2024/04/9.png`, alt: "Inter — hero" },
       { type: "image-full", src: `${BASE}/2025/03/PESQUISA-WEB.png`, alt: "Pesquisa web" },
       { type: "image-full", src: `${BASE}/2025/03/2-2-1.png`, alt: "Interface 1" },
       { type: "image-full", src: `${BASE}/2025/03/3.png`, alt: "Interface 2" },
