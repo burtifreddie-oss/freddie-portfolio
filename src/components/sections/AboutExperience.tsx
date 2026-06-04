@@ -22,7 +22,7 @@ export function AboutExperience() {
 
           {/* ── Foto sticky ── */}
           <div className="md:col-span-4">
-            <div className="sticky top-24 pb-4 pt-8 md:pb-24 md:pt-24">
+            <div className="top-24 pb-4 pt-8 md:sticky md:pb-24 md:pt-24">
               <m.div
                 initial={{ opacity: 0, scale: 1.02 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -37,7 +37,7 @@ export function AboutExperience() {
                   fill
                   priority
                   quality={90}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1400px) 42vw, 590px"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1400px) 33vw, 470px"
                   className="object-cover object-[center_15%]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/5 to-transparent" />
@@ -124,7 +124,7 @@ export function AboutExperience() {
                     >
                       <div className="min-w-0">
                         {/* company — semibold/600 */}
-                        <p className="font-display truncate text-xl font-semibold tracking-tight sm:text-2xl md:text-3xl">
+                        <p className="font-display text-xl font-semibold tracking-tight sm:text-2xl md:text-3xl">
                           {item.company}
                         </p>
                         {/* role — regular/400 */}

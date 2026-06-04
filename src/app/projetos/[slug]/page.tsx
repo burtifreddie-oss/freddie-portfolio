@@ -204,23 +204,21 @@ export default async function ProjectPage({
           </h1>
 
           {/* Cover image */}
-          <div className="mt-8 w-full overflow-hidden rounded-2xl md:mt-12" style={{ maxHeight: 540 }}>
+          <div className="relative mt-8 w-full overflow-hidden rounded-2xl md:mt-12" style={{ aspectRatio: "16/7" }}>
             <Image
               src={project.coverImage}
               alt={project.title}
-              width={1400}
-              height={540}
+              fill
               quality={90}
               priority
-              className="h-full w-full object-cover"
-              style={{ maxHeight: 540 }}
+              className="object-cover"
               sizes="(max-width: 768px) 100vw, (max-width: 1400px) 100vw, 1400px"
             />
           </div>
 
           {/* Meta row — Role + Responsibilities */}
           {(project.role || project.responsibilities) && (
-            <div className="mt-8 grid grid-cols-2 gap-8 border-t border-border pt-8 md:mt-12 md:grid-cols-4 md:gap-12 md:pt-12">
+            <div className="mt-8 grid grid-cols-1 gap-6 border-t border-border pt-8 sm:grid-cols-2 md:mt-12 md:grid-cols-4 md:gap-12 md:pt-12">
               {project.role && (
                 <div>
                   <p className="mb-2 text-xs font-semibold uppercase tracking-[0.15em]">Função</p>
@@ -228,7 +226,7 @@ export default async function ProjectPage({
                 </div>
               )}
               {project.responsibilities && (
-                <div className="col-span-1 md:col-span-3">
+                <div className="sm:col-span-1 md:col-span-3">
                   <p className="mb-2 text-xs font-semibold uppercase tracking-[0.15em]">Responsabilidades</p>
                   <p className="text-sm leading-relaxed text-muted-foreground">{project.responsibilities}</p>
                 </div>
@@ -271,7 +269,7 @@ export default async function ProjectPage({
             <span className="font-display flex flex-wrap items-center gap-3 leading-[1] tracking-tight transition-colors group-hover:text-accent md:gap-4"
               style={{ fontSize: "clamp(2rem, 8vw, 7rem)" }}>
               {next.title}
-              <ArrowUpRight className="h-8 w-8 sm:h-12 sm:w-12 md:h-20 md:w-20" />
+              <ArrowUpRight className="h-6 w-6 sm:h-10 sm:w-10 md:h-16 md:w-16" />
             </span>
           </Link>
         </div>

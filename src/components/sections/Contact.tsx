@@ -26,7 +26,7 @@ export function Contact() {
         <h2
           className="font-display leading-[0.9] tracking-tight text-foreground"
           style={{
-            fontSize: "clamp(1.25rem, 3.5vw, 4rem)",
+            fontSize: "clamp(2rem, 5vw, 4rem)",
             fontWeight: 700,
           }}
         >
@@ -47,7 +47,7 @@ export function Contact() {
               transition={{ duration: 0.45, delay: 0.1 + i * 0.07 }}
               target={link.href.startsWith("http") ? "_blank" : undefined}
               rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="group relative inline-block text-sm font-medium tracking-wide text-foreground transition-colors duration-300 hover:text-accent"
+              className="group relative inline-flex min-h-[44px] items-center text-sm font-medium tracking-wide text-foreground transition-colors duration-300 hover:text-accent"
             >
               {link.label}
               <span className="absolute bottom-0 left-0 h-px w-full bg-foreground/30 transition-colors duration-300 group-hover:bg-accent" />

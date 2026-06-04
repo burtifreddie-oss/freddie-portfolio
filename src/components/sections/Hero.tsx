@@ -55,15 +55,15 @@ export function Hero() {
 
   return (
     <section
-      className="relative flex min-h-[100svh] flex-col bg-background"
+      className="relative flex min-h-[100svh] flex-col bg-background overflow-x-hidden"
     >
       {/* ── Topo: tagline esquerda / localização direita ── */}
-      <div className="mx-auto flex w-full max-w-[1400px] items-start justify-between gap-8 px-5 pt-28 sm:px-6 md:px-10 md:pt-36">
-        <p className="max-w-[280px] text-sm font-light leading-relaxed text-muted-foreground sm:max-w-xs">
+      <div className="mx-auto flex w-full max-w-[1400px] items-start justify-between gap-4 px-4 pt-20 sm:gap-8 sm:px-6 sm:pt-28 md:px-10 md:pt-36">
+        <p className="max-w-[200px] text-xs font-light leading-relaxed text-muted-foreground sm:max-w-[280px] sm:text-sm">
           Movido pela curiosidade e resolução de problemas, busco criar designs
           que transcendem a estética com funcionalidade.
         </p>
-        <span className="shrink-0 text-xs font-light uppercase tracking-[0.22em] text-muted-foreground">
+        <span className="shrink-0 text-[10px] font-light uppercase tracking-[0.18em] text-muted-foreground sm:text-xs sm:tracking-[0.22em]">
           São Paulo — 2025
         </span>
       </div>
@@ -74,12 +74,12 @@ export function Hero() {
       {/* ── Nome em destaque — dentro do grid, com parallax ── */}
       <m.div
         style={{ y: nameY, opacity: nameOpacity }}
-        className="mx-auto w-full max-w-[1400px] px-5 pb-4 sm:px-6 md:px-10"
+        className="mx-auto w-full max-w-[1400px] px-4 pb-4 sm:px-6 md:px-10"
       >
         <HoverTooltip>
           <h1
-            className="block whitespace-nowrap font-display font-bold leading-[0.85] tracking-tight text-foreground"
-            style={{ fontSize: "clamp(2.8rem, 10.5vw, 175px)" }}
+            className="block w-full font-display font-bold leading-[0.85] tracking-tight text-foreground"
+            style={{ fontSize: "clamp(2.2rem, 11.5vw, 175px)" }}
           >
             FREDDIE BURTI
           </h1>

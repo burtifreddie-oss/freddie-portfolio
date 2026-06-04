@@ -52,7 +52,7 @@ export function ProjectCard({ project, index, className }: Props) {
               alt={project.title}
               fill
               quality={90}
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               className="object-cover transition-transform duration-700 will-change-transform group-hover:scale-[1.04]"
             />
           ) : (
