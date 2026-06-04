@@ -52,7 +52,7 @@ export const education: EducationItem[] = [
   },
   {
     course: "Graduação em Design",
-    institution: "Faculdade",
+    institution: "UNIP",
     year: "2014 — 2016",
   },
 ];
