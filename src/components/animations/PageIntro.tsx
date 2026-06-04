@@ -77,7 +77,7 @@ export function PageIntro() {
             animate={{ y: "0%" }}
             transition={{ duration: 0.85, ease: [0.76, 0, 0.24, 1], delay: 0.18 }}
           >
-            BURTI.
+            BURTI
           </m.span>
         </div>
       </m.div>
