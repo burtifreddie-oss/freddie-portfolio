@@ -13,6 +13,14 @@ export function PageIntro() {
       return;
     }
 
+    // Exibe somente na primeira visita
+    const visited = sessionStorage.getItem("fb_intro_shown");
+    if (visited) {
+      setPhase("done");
+      return;
+    }
+    sessionStorage.setItem("fb_intro_shown", "1");
+
     // Contador 0 → 100 em ~2s
     let current = 0;
     const countId = setInterval(() => {
