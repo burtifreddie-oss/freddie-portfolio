@@ -131,7 +131,7 @@ export const projects: Project[] = [
     objectives: "Criar um website que comunicasse a nova identidade da Hugny, com foco em experiências personalizadas e humanas, equilibrando os objetivos de negócio com os dados da pesquisa de usuário.",
     progress: "Iniciamos com um kickoff para entender as dores do cliente. Um survey gerou insights que alimentaram um affinity mapping, levando à criação de personas. Também realizamos um Lightning Demo onde o cliente apresentou referências visuais.",
     blocks: [
-      { type: "image-full", src: `${BASE}/2020/11/note-home2-1-1024x674.png`, alt: "Hugny hero" },
+      { type: "image-row", cols: 2, images: [`${BASE}/2020/11/note-home2-1-1024x674.png`] },
       {
         type: "toolbox",
         items: ["Survey", "Affinity Mapping", "Persona", "Análise de competidores", "Customer Journey"],
