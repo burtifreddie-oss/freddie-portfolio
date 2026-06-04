@@ -116,31 +116,6 @@ export const projects: Project[] = [
       { type: "image-full", src: "/mb-cloud.png", alt: "Mercado Bitcoin" },
     ],
   },
-  {
-    slug: "crype",
-    title: "Crype",
-    category: "Interface / Produto",
-    year: "2023",
-    description:
-      "App mobile de carteira cripto com Design System completo, interfaces funcionais e protótipos interativos — desenvolvido durante o curso de Figma da @feux.",
-    coverImage: `${BASE}/2025/06/Capa-5.png`,
-    size: "small",
-    role: "UI Designer",
-    responsibilities: "Design System completo, interfaces funcionais para app mobile e landing page responsiva.",
-    problem: "Criar um aplicativo de carteira cripto que fosse intuitivo para usuários iniciantes sem abrir mão da profundidade necessária para quem já opera com criptomoedas.",
-    objectives: "Desenvolver um Design System robusto e um app mobile com interfaces funcionais e protótipos interativos, seguindo as melhores práticas do mercado de criptoativos.",
-    progress: "Iniciei com um benchmarking de competidores e referências de mercado, analisando interfaces de partes específicas dos produtos e a interação entre os elementos de UI.",
-    blocks: [
-      { type: "image-small", src: `${BASE}/2025/06/Logo.png`, alt: "Crype logo" },
-      { type: "image-full", src: `${BASE}/2025/06/telass.png`, alt: "Crype telas" },
-      { type: "image-full", src: `${BASE}/2025/06/Pesquisa-crype-.png`, alt: "Pesquisa Crype" },
-      { type: "image-full", src: `${BASE}/2025/06/Primeiro-3.png`, alt: "Crype tela 1" },
-      { type: "image-full", src: `${BASE}/2025/06/Segundo-3.png`, alt: "Crype tela 2" },
-      { type: "image-full", src: `${BASE}/2025/06/Terceito.png`, alt: "Crype tela 3" },
-      { type: "image-full", src: `${BASE}/2025/06/Quarta.png`, alt: "Crype tela 4" },
-      { type: "image-full", src: `${BASE}/2025/06/Quinta.jpg`, alt: "Crype tela 5" },
-    ],
-  },
 ];
 
 export function getProject(slug: string) {
