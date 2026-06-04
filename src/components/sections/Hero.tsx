@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { m, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 
@@ -46,18 +46,15 @@ function HoverTooltip({ children }: { children: React.ReactNode }) {
 
 /* ── Hero ── */
 export function Hero() {
-  const sectionRef = useRef<HTMLElement>(null);
+  // scrollY global — mais confiável que target ref para parallax
+  const { scrollY } = useScroll();
 
-  // Parallax: nome sobe ~12% ao scrollar a hero para fora
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end start"],
-  });
-  const nameY = useTransform(scrollYProgress, [0, 1], ["0%", "-12%"]);
+  // Ao scrollar: nome sobe ~280px e desaparece
+  const nameY = useTransform(scrollY, [0, 500], [0, -280]);
+  const nameOpacity = useTransform(scrollY, [0, 220, 450], [1, 0.6, 0]);
 
   return (
     <section
-      ref={sectionRef}
       className="relative flex min-h-[100svh] flex-col bg-background"
     >
       {/* ── Topo: tagline esquerda / localização direita ── */}
@@ -76,8 +73,8 @@ export function Hero() {
 
       {/* ── Nome em destaque — dentro do grid, com parallax ── */}
       <m.div
-        style={{ y: nameY }}
-        className="mx-auto w-full max-w-[1400px] overflow-hidden px-5 pb-4 sm:px-6 md:px-10"
+        style={{ y: nameY, opacity: nameOpacity }}
+        className="mx-auto w-full max-w-[1400px] px-5 pb-4 sm:px-6 md:px-10"
       >
         <HoverTooltip>
           <h1
