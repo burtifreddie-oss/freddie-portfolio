@@ -42,7 +42,6 @@ export const projects: Project[] = [
     objectives: "Criar uma campanha Orange Friday que comunicasse claramente os benefícios exclusivos para clientes Acerto, com uma interface orientada por dados e métricas de conversão.",
     progress: "Iniciamos o projeto com um benchmarking de vários competidores diretos e indiretos, analisando a interface e a organização visual dos elementos para embasar as decisões de design.",
     blocks: [
-      { type: "image-full", src: `/capa-inter-nova.png`, alt: "Inter" },
       { type: "image-full", src: `${BASE}/2025/03/PESQUISA-WEB.png`, alt: "Pesquisa web" },
       { type: "text-section", title: "", body: "Após analises visuais da hierarquia de informação utilizada nos competidores diretos e indiretos, começamos a construir alguns wireframes para esboçar algumas ideias até chegarmos no resultado final" },
       { type: "image-full", src: `${BASE}/2025/03/2-2-1.png`, alt: "Interface 1" },
@@ -65,7 +64,6 @@ export const projects: Project[] = [
     objectives: "Desenvolver um conjunto de materiais visuais coesos que acelerassem o onboarding dos clientes e aumentassem a adoção dos meios de pagamento da plataforma.",
     progress: "Estruturei um fluxo de criação que partia da identidade visual do EFÍ Bank e se desdobrava em diferentes formatos: posts, carrosséis, e-mails e materiais para parceiros.",
     blocks: [
-      { type: "image-full", src: `/capa-efi-nova.png`, alt: "EFÍ Bank" },
       {
         type: "image-row",
         cols: 3,
@@ -114,7 +112,6 @@ export const projects: Project[] = [
     objectives: "Redesenhar os fluxos de onboarding e trade para reduzir a fricção de entrada, aumentar a conversão e manter a confiança de quem já opera na plataforma.",
     progress: "Mapeamos os principais pontos de abandono no funil de onboarding e realizamos testes com usuários de diferentes perfis para validar as soluções de interface propostas.",
     blocks: [
-      { type: "image-full", src: `/capa-mb-nova.png`, alt: "Mercado Bitcoin" },
     ],
   },
 ];
