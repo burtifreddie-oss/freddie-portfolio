@@ -30,7 +30,7 @@ export const projects: Project[] = [
   {
     slug: "inter",
     title: "Inter",
-    category: "Interface / Produto",
+    category: "Interface",
     year: "2025",
     description:
       "Campanha Orange Friday em parceria com o Banco Inter — descontos exclusivos para clientes Acerto, com pesquisa de benchmarking e interface orientada por dados.",
@@ -102,7 +102,7 @@ export const projects: Project[] = [
   {
     slug: "mercado-bitcoin",
     title: "Mercado Bitcoin",
-    category: "Interface / Produto",
+    category: "Interface",
     year: "2022",
     description:
       "Interface da maior plataforma de criptoativos da América Latina, com foco em fluxos de onboarding e trade para novos e experientes investidores.",
