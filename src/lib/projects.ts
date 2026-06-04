@@ -112,6 +112,7 @@ export const projects: Project[] = [
     objectives: "Redesenhar os fluxos de onboarding e trade para reduzir a fricção de entrada, aumentar a conversão e manter a confiança de quem já opera na plataforma.",
     progress: "Mapeamos os principais pontos de abandono no funil de onboarding e realizamos testes com usuários de diferentes perfis para validar as soluções de interface propostas.",
     blocks: [
+      { type: "image-full", src: `/mb-cloud-portfolio.png`, alt: "MB Cloud — Nova Landing Page do Mercado Bitcoin" },
     ],
   },
 ];
