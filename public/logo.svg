@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 360" fill="none">
+  <!-- barra esquerda -->
+  <rect x="20"  y="20"  width="100" height="320" fill="#FF3B30"/>
+  <!-- barra central -->
+  <rect x="160" y="20"  width="100" height="320" fill="#FF3B30"/>
+  <!-- barra direita (menor, alinhada à base) -->
+  <rect x="300" y="160" width="100" height="180" fill="#FF3B30"/>
+</svg>

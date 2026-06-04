@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { m, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -43,9 +44,16 @@ export function Header() {
         <div className="mx-auto flex h-16 w-full max-w-[1400px] items-center justify-between px-4 sm:px-6 md:h-20 md:px-10">
           <Link
             href="/"
-            className="text-lg font-bold tracking-tight transition-colors hover:text-accent md:text-xl"
+            className="flex items-center transition-opacity hover:opacity-70"
+            aria-label="Freddie Burti — início"
           >
-            Freddie Burti
+            <Image
+              src="/logo.svg"
+              alt="Freddie Burti"
+              width={36}
+              height={32}
+              priority
+            />
           </Link>
 
           {/* Desktop nav — links + pill buttons juntos */}
