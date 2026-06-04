@@ -28,7 +28,7 @@ export function AboutExperience() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
-                className="relative w-full overflow-hidden rounded-2xl border border-border bg-card md:w-[80%]"
+                className="relative w-full overflow-hidden rounded-lg border border-border bg-card md:w-[80%]"
                 style={{ aspectRatio: "4/5" }}
               >
                 <Image
