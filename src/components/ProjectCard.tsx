@@ -25,23 +25,23 @@ export function ProjectCard({ project, index, className }: Props) {
 
   return (
     <m.div
-      initial={{ opacity: 0, y: 36 }}
+      initial={{ opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.1 }}
       transition={{
-        duration: 0.7,
+        duration: 0.65,
         ease: [0.25, 0.46, 0.45, 0.94],
-        delay: (index % 2) * 0.1,
+        delay: (index % 4) * 0.07,
       }}
       className={cn("group relative", className)}
     >
       <Link
         href={`/projetos/${project.slug}`}
-        className="block overflow-hidden rounded-xl border border-border bg-card transition-colors duration-500 group-hover:border-accent/50 sm:rounded-2xl"
+        className="block overflow-hidden rounded-xl bg-[#111111] sm:rounded-2xl"
       >
-        {/* Imagem */}
+        {/* Card — imagem preenche tudo, sem footer de texto */}
         <div
-          className="relative aspect-[4/3] w-full overflow-hidden bg-muted"
+          className="relative aspect-[4/3] w-full overflow-hidden"
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
           onMouseMove={handleMove}
@@ -52,15 +52,35 @@ export function ProjectCard({ project, index, className }: Props) {
               alt={project.title}
               fill
               quality={90}
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 800px"
-              className="object-cover grayscale transition-all duration-700 will-change-transform group-hover:scale-[1.03] group-hover:grayscale-0"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
+              className="object-cover transition-transform duration-700 will-change-transform group-hover:scale-[1.04]"
             />
           ) : (
             <div className="absolute inset-0 bg-gradient-to-br from-zinc-800 via-zinc-900 to-black" />
           )}
 
-          {/* Gradiente inferior */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+          {/* Overlay escuro suave */}
+          <div className="absolute inset-0 bg-black/25 transition-opacity duration-500 group-hover:bg-black/10" />
+
+          {/* Gradiente inferior para os metadados */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+
+          {/* Tag de categoria — topo esquerdo */}
+          <div className="absolute left-4 top-4 z-10">
+            <span className="rounded-sm bg-black/50 px-2 py-1 text-[10px] font-medium uppercase tracking-[0.15em] text-white/70 backdrop-blur-sm">
+              {project.category}
+            </span>
+          </div>
+
+          {/* Metadados — base do card */}
+          <div className="absolute bottom-0 left-0 right-0 z-10 flex items-end justify-between px-4 pb-4 sm:px-5 sm:pb-5">
+            <p className="text-sm font-semibold leading-tight tracking-tight text-white sm:text-base">
+              {project.title}
+            </p>
+            <span className="shrink-0 text-[11px] font-light text-white/50">
+              {project.year}
+            </span>
+          </div>
 
           {/* Cursor follower */}
           <AnimatePresence>
@@ -69,35 +89,19 @@ export function ProjectCard({ project, index, className }: Props) {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-                className="pointer-events-none absolute z-10 flex items-center gap-2 rounded-full bg-foreground/90 px-5 py-3 text-sm font-medium text-background backdrop-blur-sm"
+                transition={{ duration: 0.18, ease: "easeOut" }}
+                className="pointer-events-none absolute z-20 flex items-center gap-2 rounded-full bg-white/90 px-5 py-3 text-sm font-medium text-black backdrop-blur-sm"
                 style={{
                   left: pos.x,
                   top: pos.y,
                   transform: "translate(-50%, -50%)",
                 }}
               >
-                Ver Projeto
+                Ver projeto
                 <ArrowUpRight className="h-4 w-4" />
               </m.span>
             )}
           </AnimatePresence>
-        </div>
-
-        {/* Rodapé do card */}
-        <div className="flex items-center justify-between gap-4 px-4 py-4 sm:px-6 sm:py-6">
-          <div className="min-w-0">
-            {/* title — semibold/600 */}
-            <p className="font-display truncate text-xl font-semibold tracking-tight sm:text-2xl md:text-3xl">
-              {project.title}
-            </p>
-            {/* category — light/300 */}
-            <p className="mt-1 truncate text-xs font-light text-muted-foreground">
-              {project.category}
-            </p>
-          </div>
-          {/* year — light/300 */}
-          <span className="shrink-0 text-xs font-light text-muted-foreground">{project.year}</span>
         </div>
       </Link>
     </m.div>
