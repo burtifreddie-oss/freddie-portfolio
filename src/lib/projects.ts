@@ -43,6 +43,7 @@ export const projects: Project[] = [
     progress: "Iniciamos o projeto com um benchmarking de vários competidores diretos e indiretos, analisando a interface e a organização visual dos elementos para embasar as decisões de design.",
     blocks: [
       { type: "image-full", src: `${BASE}/2025/03/PESQUISA-WEB.png`, alt: "Pesquisa web" },
+      { type: "text-section", title: "", body: "Após analises visuais da hierarquia de informação utilizada nos competidores diretos e indiretos, começamos a construir alguns wireframes para esboçar algumas ideias até chegarmos no resultado final" },
       { type: "image-full", src: `${BASE}/2025/03/2-2-1.png`, alt: "Interface 1" },
       { type: "image-full", src: `${BASE}/2025/03/3.png`, alt: "Interface 2" },
       { type: "image-full", src: `${BASE}/2025/03/4.png`, alt: "Interface 3" },
