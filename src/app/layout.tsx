@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.freddieburti.com.br"),
   icons: {
     icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
       { url: "/favicon.ico", sizes: "any" },
       { url: "/icon.png", type: "image/png", sizes: "192x192" },
     ],

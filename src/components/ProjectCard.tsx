@@ -60,10 +60,10 @@ export function ProjectCard({ project, index, className }: Props) {
           )}
 
           {/* Overlay escuro suave */}
-          <div className="absolute inset-0 bg-black/25 transition-opacity duration-500 group-hover:bg-black/10" />
+          <div className="absolute inset-0 bg-black/10 transition-opacity duration-500 group-hover:bg-black/0" />
 
           {/* Gradiente inferior para os metadados */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
           {/* Tag de categoria — topo esquerdo */}
           <div className="absolute left-4 top-4 z-10">
