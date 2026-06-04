@@ -114,7 +114,6 @@ export const projects: Project[] = [
     progress: "Mapeamos os principais pontos de abandono no funil de onboarding e realizamos testes com usuários de diferentes perfis para validar as soluções de interface propostas.",
     blocks: [
       { type: "image-full", src: "/mb-cloud.png", alt: "Mercado Bitcoin" },
-      { type: "image-full", src: "/mb-case.png", alt: "Mercado Bitcoin case" },
     ],
   },
   {
