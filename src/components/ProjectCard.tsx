@@ -37,7 +37,7 @@ export function ProjectCard({ project, index, className }: Props) {
     >
       <Link
         href={`/projetos/${project.slug}`}
-        className="block overflow-hidden rounded-xl bg-[#111111] sm:rounded-2xl"
+        className="block overflow-hidden rounded-lg bg-[#111111]"
       >
         {/* Card — imagem preenche tudo, sem footer de texto */}
         <div

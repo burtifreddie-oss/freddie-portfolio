@@ -81,7 +81,7 @@ export function Hero() {
             className="block whitespace-nowrap font-display font-bold leading-[0.85] tracking-tight text-foreground"
             style={{ fontSize: "clamp(2.8rem, 10.5vw, 175px)" }}
           >
-            FREDDIE BURTI.
+            FREDDIE BURTI
           </h1>
         </HoverTooltip>
 
