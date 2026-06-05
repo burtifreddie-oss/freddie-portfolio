@@ -101,7 +101,7 @@ export function Hero() {
       <div className="flex-1 md:hidden" />
 
       {/* ── Margem inferior desktop ── */}
-      <div className="hidden md:block md:pb-14" />
+      <div className="hidden md:block md:pb-6" />
     </section>
   );
 }

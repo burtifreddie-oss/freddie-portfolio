@@ -9,7 +9,7 @@ export function Projects() {
   const featured = projects;
 
   return (
-    <section id="projetos" className="relative w-full py-16 md:py-24">
+    <section id="projetos" className="relative w-full pb-16 pt-8 md:pb-24 md:pt-10">
 
       {/* Cabeçalho */}
       <div className="mx-auto mb-8 flex w-full max-w-[1400px] items-end justify-between gap-6 px-5 sm:px-6 md:mb-12 md:px-10">
