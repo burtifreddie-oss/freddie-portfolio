@@ -55,7 +55,7 @@ export function Hero() {
 
   return (
     <section
-      className="relative flex min-h-[100svh] flex-col bg-background overflow-x-hidden"
+      className="relative flex min-h-[72svh] flex-col bg-background overflow-x-hidden md:min-h-[100svh]"
     >
       {/* ── Topo: tagline esquerda / localização direita ── */}
       <div className="mx-auto flex w-full max-w-[1400px] items-start justify-between gap-4 px-4 pt-20 sm:gap-8 sm:px-6 sm:pt-28 md:px-10 md:pt-36">
