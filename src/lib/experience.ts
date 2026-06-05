@@ -68,4 +68,5 @@ export const skills = [
   "Design System",
   "Figma",
   "Adobe Creative Suite",
+  "Inteligência Artificial",
 ];
