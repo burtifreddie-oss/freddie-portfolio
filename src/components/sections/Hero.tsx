@@ -68,7 +68,7 @@ export function Hero() {
         </span>
       </div>
 
-      {/* ── Espaçador ── */}
+      {/* ── Espaçador superior ── */}
       <div className="flex-1" />
 
       {/* ── Nome em destaque — dentro do grid, com parallax ── */}
@@ -97,8 +97,11 @@ export function Hero() {
         </div>
       </m.div>
 
-      {/* ── Margem inferior ── */}
-      <div className="pb-10 md:pb-14" />
+      {/* ── Espaçador inferior (só mobile — centraliza o nome verticalmente) ── */}
+      <div className="flex-1 md:hidden" />
+
+      {/* ── Margem inferior desktop ── */}
+      <div className="hidden md:block md:pb-14" />
     </section>
   );
 }
