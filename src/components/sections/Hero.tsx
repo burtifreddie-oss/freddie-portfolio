@@ -64,7 +64,7 @@ export function Hero() {
           que transcendem a estética com funcionalidade.
         </p>
         <span className="shrink-0 text-[10px] font-light uppercase tracking-[0.18em] text-muted-foreground sm:text-xs sm:tracking-[0.22em]">
-          São Paulo — 2025
+          São Paulo — 2026
         </span>
       </div>
 
