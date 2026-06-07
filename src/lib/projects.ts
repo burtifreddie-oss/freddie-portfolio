@@ -122,14 +122,13 @@ export const projects: Project[] = [
     year: "2023",
     description:
       "App mobile de carteira cripto com Design System completo, interfaces funcionais e protótipos interativos — desenvolvido durante o curso de Figma da @feux.",
-    coverImage: `${BASE}/2025/06/Capa-5.png`,
+    coverImage: `/crype-4.png`,
     role: "UI Designer",
     responsibilities: "Design System completo, interfaces funcionais para app mobile e landing page responsiva.",
     problem: "Criar um aplicativo de carteira cripto que fosse intuitivo para usuários iniciantes sem abrir mão da profundidade necessária para quem já opera com criptomoedas.",
     objectives: "Desenvolver um Design System robusto e um app mobile com interfaces funcionais e protótipos interativos, seguindo as melhores práticas do mercado de criptoativos.",
     progress: "Iniciei com um benchmarking de competidores e referências de mercado, analisando interfaces de partes específicas dos produtos e a interação entre os elementos de UI.",
     blocks: [
-      { type: "image-full", src: `/crype-1.png`,        alt: "Crype — Cores" },
       { type: "image-full", src: `/crype-1-5.png`,      alt: "Crype — UI Elements" },
       { type: "image-full", src: `/crype-2.png`,        alt: "Crype — Tipografia" },
       { type: "image-full", src: `/crype-3.png`,        alt: "Crype — Ícones" },
