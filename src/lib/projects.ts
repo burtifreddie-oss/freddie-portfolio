@@ -122,7 +122,7 @@ export const projects: Project[] = [
     year: "2023",
     description:
       "App mobile de carteira cripto com Design System completo, interfaces funcionais e protótipos interativos — desenvolvido durante o curso de Figma da @feux.",
-    coverImage: `/crype-1.png`,
+    coverImage: `/capa-crype.png`,
     role: "UI Designer",
     responsibilities: "Design System completo, interfaces funcionais para app mobile e landing page responsiva.",
     problem: "Criar um aplicativo de carteira cripto que fosse intuitivo para usuários iniciantes sem abrir mão da profundidade necessária para quem já opera com criptomoedas.",
