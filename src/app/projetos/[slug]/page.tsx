@@ -37,7 +37,7 @@ function BlockImageFull({ src, alt }: { src: string; alt?: string }) {
         width={1600}
         height={900}
         quality={90}
-        className="h-auto w-full rounded-xl sm:rounded-2xl"
+        className="h-auto w-full rounded-lg"
         sizes="(max-width: 768px) 100vw, (max-width: 1400px) 100vw, 1400px"
       />
     </div>
@@ -76,7 +76,7 @@ function BlockImageRow({ images, cols = 2 }: { images: string[]; cols?: 2 | 3 | 
           width={800}
           height={600}
           quality={90}
-          className="h-auto w-full rounded-xl"
+          className="h-auto w-full rounded-lg"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 500px"
         />
       ))}

@@ -134,6 +134,7 @@ export const projects: Project[] = [
       { type: "image-full", src: `/crype-4.png`,   alt: "Crype — Hero" },
       { type: "image-row", cols: 2, images: [`/crype-5.png`, `/crype-6.png`] },
       { type: "image-full", src: `/crype-7.png`,   alt: "Crype — Telas do App" },
+      { type: "image-full", src: `/crype-8.jpg`,   alt: "Crype — Telas" },
     ],
   },
 ];
