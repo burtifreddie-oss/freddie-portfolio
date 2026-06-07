@@ -115,6 +115,36 @@ export const projects: Project[] = [
       { type: "image-full", src: `/mb-cloud-portfolio.png`, alt: "MB Cloud — Nova Landing Page do Mercado Bitcoin" },
     ],
   },
+  {
+    slug: "habii-tech",
+    title: "Habii.tech",
+    category: "Branding",
+    year: "2023",
+    description:
+      "Identidade visual completa para a Habii.tech — empresa focada em soluções tecnológicas e desenvolvimento de aplicativos. Conceito minimalista e digital para comunicar inovação e confiança.",
+    coverImage: `${BASE}/2023/11/Habii-tech-grid-1.png`,
+    role: "Designer",
+    responsibilities: "Concepção do logo e símbolo, variações de marca, paleta de cores, papelaria, mockups de cartão, uniforme e materiais digitais para redes sociais.",
+    problem: "A Habii.tech precisava de uma identidade visual que comunicasse sua essência tecnológica e inovadora, diferenciando-se no mercado de desenvolvimento de software e aplicativos.",
+    objectives: "Criar uma identidade visual minimalista e digital que transmitisse confiança, modernidade e competência tecnológica, com aplicações consistentes em todos os pontos de contato da marca.",
+    progress: "Desenvolvemos um planejamento criativo completo — desde a concepção do símbolo e logotipo até as aplicações em papelaria, cartão de visita, uniforme e conteúdo para redes sociais.",
+    blocks: [
+      { type: "image-full", src: `${BASE}/2023/11/Habii.tech-logo.png`, alt: "Habii.tech — Logo" },
+      { type: "image-full", src: `${BASE}/2023/11/Habii.tech-cor-2.png`, alt: "Habii.tech — Cores" },
+      { type: "image-full", src: `${BASE}/2023/11/Habii.tech_variacoes.png`, alt: "Habii.tech — Variações do logo" },
+      {
+        type: "image-row",
+        cols: 2,
+        images: [
+          `${BASE}/2023/11/Papelaria-Habiitech-1.jpg`,
+          `${BASE}/2023/11/cart%C3%A3o-habii-mockup-1.jpg`,
+        ],
+      },
+      { type: "image-full", src: `${BASE}/2023/11/Habii.tech-APP-1.png`, alt: "Habii.tech — App" },
+      { type: "image-full", src: `${BASE}/2023/11/Posts-habii.tech-2.png`, alt: "Habii.tech — Posts" },
+      { type: "image-full", src: `${BASE}/2023/11/Camiseta-Habii-1-1.png`, alt: "Habii.tech — Camiseta" },
+    ],
+  },
 ];
 
 export function getProject(slug: string) {
