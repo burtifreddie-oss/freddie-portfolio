@@ -41,7 +41,7 @@ export function ProjectCard({ project, index, className }: Props) {
       >
         {/* Card — imagem preenche tudo, sem footer de texto */}
         <div
-          className="relative aspect-[4/3] w-full overflow-hidden"
+          className="relative aspect-[16/9] w-full overflow-hidden"
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
           onMouseMove={handleMove}
