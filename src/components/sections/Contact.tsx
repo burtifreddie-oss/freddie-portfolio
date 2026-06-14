@@ -61,7 +61,7 @@ export function Contact() {
         {/* ── Footer row — light/300 ── */}
         <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <span className="text-xs font-light text-muted-foreground">
-            Freddie Burti — Designer
+            Freddie Burti — Senior Visual Designer
           </span>
           <span className="text-xs font-light text-muted-foreground">
             São Paulo, Brasil
