@@ -221,7 +221,7 @@ export default async function ProjectPage({
             <div className="mt-8 grid grid-cols-1 gap-6 border-t border-border pt-8 sm:grid-cols-2 md:mt-12 md:grid-cols-4 md:gap-12 md:pt-12">
               {project.category && (
                 <div>
-                  <p className="text-sm leading-relaxed text-muted-foreground">{project.category}</p>
+                  <p className="text-xs font-semibold uppercase tracking-[0.15em]">{project.category}</p>
                 </div>
               )}
               {project.responsibilities && (
