@@ -118,7 +118,7 @@ export const projects: Project[] = [
   {
     slug: "crype",
     title: "Crype",
-    category: "Interface / Produto",
+    category: "Interface",
     year: "2023",
     description:
       "App mobile de carteira cripto com Design System completo, interfaces funcionais e protótipos interativos — desenvolvido durante o curso de Figma da @feux.",

@@ -216,18 +216,18 @@ export default async function ProjectPage({
             />
           </div>
 
-          {/* Meta row — Role + Responsibilities */}
-          {(project.role || project.responsibilities) && (
+          {/* Meta row — Tipo + Skills */}
+          {(project.category || project.responsibilities) && (
             <div className="mt-8 grid grid-cols-1 gap-6 border-t border-border pt-8 sm:grid-cols-2 md:mt-12 md:grid-cols-4 md:gap-12 md:pt-12">
-              {project.role && (
+              {project.category && (
                 <div>
-                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.15em]">Função</p>
-                  <p className="text-sm leading-relaxed text-muted-foreground">{project.role}</p>
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.15em]">Tipo</p>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{project.category}</p>
                 </div>
               )}
               {project.responsibilities && (
                 <div className="sm:col-span-1 md:col-span-3">
-                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.15em]">Responsabilidades</p>
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.15em]">Skills</p>
                   <p className="text-sm leading-relaxed text-muted-foreground">{project.responsibilities}</p>
                 </div>
               )}
