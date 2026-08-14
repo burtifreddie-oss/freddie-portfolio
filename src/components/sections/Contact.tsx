@@ -5,7 +5,6 @@ import { m } from "framer-motion";
 const LINKS = [
   { label: "Enviar e-mail", href: "mailto:burtifreddie@gmail.com" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/freddieburti/" },
-  { label: "Behance", href: "https://www.behance.net/freddieab" },
   { label: "Baixar CV", href: "/freddie-burti-cv.pdf" },
 ];
 
