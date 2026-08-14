@@ -14,6 +14,75 @@ type Props = {
   className?: string;
 };
 
+function CardInner({
+  project,
+  hovered,
+  pos,
+  onMouseEnter,
+  onMouseLeave,
+  onMouseMove,
+}: {
+  project: Project;
+  hovered: boolean;
+  pos: { x: number; y: number };
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
+  onMouseMove?: (e: React.MouseEvent<HTMLDivElement>) => void;
+}) {
+  return (
+    <div
+      className="relative aspect-[1920/2476] w-full overflow-hidden"
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      onMouseMove={onMouseMove}
+    >
+      {project.coverImage ? (
+        <Image
+          src={project.coverImage}
+          alt={project.title}
+          fill
+          quality={90}
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover transition-transform duration-700 will-change-transform group-hover:scale-[1.04]"
+        />
+      ) : (
+        <div className="absolute inset-0 bg-gradient-to-br from-zinc-800 via-zinc-900 to-black" />
+      )}
+
+      <div className="absolute inset-0 bg-black/10 transition-opacity duration-500 group-hover:bg-black/0" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+
+      <div className="absolute left-4 top-4 z-10">
+        <span className="rounded-sm bg-black/50 px-2 py-1 text-[10px] font-medium uppercase tracking-[0.15em] text-white/70 backdrop-blur-sm">
+          {project.category}
+        </span>
+      </div>
+
+      <div className="absolute bottom-0 left-0 right-0 z-10 flex items-end justify-between px-4 pb-4 sm:px-5 sm:pb-5">
+        <p className="text-base font-semibold leading-tight tracking-tight text-white">
+          {project.title}
+        </p>
+      </div>
+
+      <AnimatePresence>
+        {hovered && (
+          <m.span
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.18, ease: "easeOut" }}
+            className="pointer-events-none absolute z-20 flex items-center gap-2 rounded-full bg-white/90 px-5 py-3 text-base font-medium text-black backdrop-blur-sm"
+            style={{ left: pos.x, top: pos.y, transform: "translate(-50%, -50%)" }}
+          >
+            Ver projeto
+            <ArrowUpRight className="h-4 w-4" />
+          </m.span>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
 export function ProjectCard({ project, index, className }: Props) {
   const [hovered, setHovered] = useState(false);
   const [pos, setPos] = useState({ x: 0, y: 0 });
@@ -35,75 +104,26 @@ export function ProjectCard({ project, index, className }: Props) {
       }}
       className={cn("group relative", className)}
     >
-      <Link
-        href={`/projetos/${project.slug}`}
-        className="block overflow-hidden rounded-lg bg-[#111111]"
-      >
-        {/* Card — imagem preenche tudo, sem footer de texto */}
-        <div
-          className="relative aspect-[16/9] w-full overflow-hidden"
-          onMouseEnter={() => setHovered(true)}
-          onMouseLeave={() => setHovered(false)}
-          onMouseMove={handleMove}
-        >
-          {project.coverImage ? (
-            <Image
-              src={project.coverImage}
-              alt={project.title}
-              fill
-              quality={90}
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              className="object-cover transition-transform duration-700 will-change-transform group-hover:scale-[1.04]"
-            />
-          ) : (
-            <div className="absolute inset-0 bg-gradient-to-br from-zinc-800 via-zinc-900 to-black" />
-          )}
-
-          {/* Overlay escuro suave */}
-          <div className="absolute inset-0 bg-black/10 transition-opacity duration-500 group-hover:bg-black/0" />
-
-          {/* Gradiente inferior para os metadados */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-
-          {/* Tag de categoria — topo esquerdo */}
-          <div className="absolute left-4 top-4 z-10">
-            <span className="rounded-sm bg-black/50 px-2 py-1 text-[10px] font-medium uppercase tracking-[0.15em] text-white/70 backdrop-blur-sm">
-              {project.category}
-            </span>
-          </div>
-
-          {/* Metadados — base do card */}
-          <div className="absolute bottom-0 left-0 right-0 z-10 flex items-end justify-between px-4 pb-4 sm:px-5 sm:pb-5">
-            <p className="text-sm font-semibold leading-tight tracking-tight text-white sm:text-base">
-              {project.title}
-            </p>
-            <span className="shrink-0 text-[11px] font-light text-white/50">
-              {project.year}
-            </span>
-          </div>
-
-          {/* Cursor follower */}
-          <AnimatePresence>
-            {hovered && (
-              <m.span
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.18, ease: "easeOut" }}
-                className="pointer-events-none absolute z-20 flex items-center gap-2 rounded-full bg-white/90 px-5 py-3 text-sm font-medium text-black backdrop-blur-sm"
-                style={{
-                  left: pos.x,
-                  top: pos.y,
-                  transform: "translate(-50%, -50%)",
-                }}
-              >
-                Ver projeto
-                <ArrowUpRight className="h-4 w-4" />
-              </m.span>
-            )}
-          </AnimatePresence>
+      {/* Wrapper: sem link quando disabled */}
+      {project.disabled ? (
+        <div className="block cursor-default overflow-hidden rounded-lg bg-[#111111]">
+          <CardInner project={project} hovered={false} pos={pos} />
         </div>
-      </Link>
+      ) : (
+        <Link
+          href={`/projetos/${project.slug}`}
+          className="block overflow-hidden rounded-lg bg-[#111111]"
+        >
+          <CardInner
+            project={project}
+            hovered={hovered}
+            pos={pos}
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
+            onMouseMove={handleMove}
+          />
+        </Link>
+      )}
     </m.div>
   );
 }

@@ -86,7 +86,7 @@ export function AboutExperience() {
               </m.p>
 
               <div className="mt-10 md:mt-12">
-                <span className="text-xs font-light uppercase tracking-[0.2em] text-muted-foreground">
+                <span className="text-base font-light uppercase tracking-[0.2em] text-muted-foreground">
                   Skills
                 </span>
                 <div className="mt-4 flex flex-wrap gap-2">
@@ -128,12 +128,12 @@ export function AboutExperience() {
                           {item.company}
                         </p>
                         {/* role — regular/400 */}
-                        <p className="mt-1 text-sm font-normal text-muted-foreground">
+                        <p className="mt-1 text-base font-normal text-muted-foreground">
                           {item.role}
                         </p>
                       </div>
                       {/* period — light/300 */}
-                      <span className="mt-1 shrink-0 text-xs font-light uppercase tracking-[0.18em] text-muted-foreground sm:mt-0">
+                      <span className="mt-1 shrink-0 text-sm font-light uppercase tracking-[0.18em] text-muted-foreground sm:mt-0 sm:text-base">
                         {item.period}
                       </span>
                     </m.li>
@@ -159,14 +159,13 @@ export function AboutExperience() {
                   >
                     <div className="min-w-0">
                       {/* course — medium/500 */}
-                      <p className="text-base font-medium">{item.course}</p>
-                      {/* institution — light/300 */}
-                      <p className="mt-0.5 text-xs font-light text-muted-foreground">
+                      <p className="text-xl font-medium sm:text-[30px]">{item.course}</p>
+                      <p className="mt-0.5 text-sm font-light text-muted-foreground sm:text-base">
                         {item.institution}
                       </p>
                     </div>
                     {/* year — light/300 */}
-                    <span className="mt-1 shrink-0 text-xs font-light uppercase tracking-[0.18em] text-muted-foreground sm:mt-0">
+                    <span className="mt-1 shrink-0 text-sm font-light uppercase tracking-[0.18em] text-muted-foreground sm:mt-0 sm:text-base">
                       {item.year}
                     </span>
                   </m.li>

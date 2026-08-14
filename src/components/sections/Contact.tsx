@@ -47,7 +47,7 @@ export function Contact() {
               transition={{ duration: 0.45, delay: 0.1 + i * 0.07 }}
               target={link.href.startsWith("http") ? "_blank" : undefined}
               rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="group relative inline-flex min-h-[44px] items-center text-sm font-medium tracking-wide text-foreground transition-colors duration-300 hover:text-accent"
+              className="group relative inline-flex min-h-[44px] items-center text-base font-medium tracking-wide text-foreground transition-colors duration-300 hover:text-accent"
             >
               {link.label}
               <span className="absolute bottom-0 left-0 h-px w-full bg-foreground/30 transition-colors duration-300 group-hover:bg-accent" />
@@ -60,10 +60,10 @@ export function Contact() {
 
         {/* ── Footer row — light/300 ── */}
         <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-          <span className="text-xs font-light text-muted-foreground">
+          <span className="text-base font-light text-muted-foreground">
             Freddie Burti — Senior Visual Designer
           </span>
-          <span className="text-xs font-light text-muted-foreground">
+          <span className="text-base font-light text-muted-foreground">
             São Paulo, Brasil
           </span>
         </div>

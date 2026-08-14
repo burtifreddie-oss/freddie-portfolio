@@ -20,7 +20,7 @@ export function Projects() {
           transition={{ duration: 0.7 }}
           className="flex flex-col gap-2"
         >
-          <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+          <span className="text-base uppercase tracking-[0.2em] text-muted-foreground">
             Projetos selecionados
           </span>
         </m.div>
@@ -46,18 +46,6 @@ export function Projects() {
         </div>
       </div>
 
-      {/* CTA Behance */}
-      <div className="mx-auto mt-10 flex w-full max-w-[1400px] justify-center px-5 sm:px-6 md:mt-14 md:px-10">
-        <a
-          href="https://www.behance.net/freddieab"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex min-h-[48px] items-center gap-2 rounded-full border border-border px-6 py-3 text-sm transition-all duration-300 hover:border-accent hover:bg-accent hover:text-background"
-        >
-          Ver mais no Behance
-          <ArrowUpRight className="h-4 w-4" />
-        </a>
-      </div>
     </section>
   );
 }

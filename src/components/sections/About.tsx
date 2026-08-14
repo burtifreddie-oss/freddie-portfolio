@@ -58,7 +58,7 @@ export function About() {
 
         {/* Bio */}
         <div className="flex flex-col justify-start md:col-span-7">
-          <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+          <span className="text-base uppercase tracking-[0.2em] text-muted-foreground">
             Bio
           </span>
 
@@ -83,7 +83,7 @@ export function About() {
           </m.p>
 
           <div className="mt-10 md:mt-12">
-            <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+            <span className="text-base uppercase tracking-[0.2em] text-muted-foreground">
               Skills
             </span>
             <div className="mt-4 flex flex-wrap gap-2">

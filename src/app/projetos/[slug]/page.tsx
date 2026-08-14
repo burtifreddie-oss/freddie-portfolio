@@ -151,7 +151,7 @@ function ContentSection({
         <div className="grid grid-cols-1 gap-6 py-16 md:grid-cols-12 md:gap-12 md:py-24">
           {/* Label — col esquerda */}
           <div className="md:col-span-4">
-            <span className="text-xs font-light uppercase tracking-[0.2em] text-muted-foreground">
+            <span className="text-base font-light uppercase tracking-[0.2em] text-muted-foreground">
               {label}
             </span>
           </div>
@@ -188,14 +188,14 @@ export default async function ProjectPage({
         <div className="mx-auto w-full max-w-[1400px] px-4 pb-10 pt-24 sm:px-6 md:px-10 md:pb-16 md:pt-40">
           <Link
             href="/#projetos"
-            className="mb-8 inline-flex min-h-[44px] items-center gap-2 text-xs uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-foreground md:mb-10"
+            className="mb-8 inline-flex min-h-[44px] items-center gap-2 text-base uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-foreground md:mb-10"
           >
             <ArrowLeft className="h-3 w-3" />
             Voltar
           </Link>
 
           {/* Data + título */}
-          <div className="mb-2 text-sm text-muted-foreground">{project.year}</div>
+          <div className="mb-2 text-base text-muted-foreground">{project.year}</div>
           <h1
             className="font-display leading-[0.95] tracking-tight"
             style={{ fontSize: "clamp(2.5rem, 8vw, 5rem)", fontWeight: 400 }}
@@ -206,7 +206,7 @@ export default async function ProjectPage({
           {/* Cover image */}
           <div className="relative mt-8 w-full overflow-hidden rounded-2xl md:mt-12" style={{ aspectRatio: "16/7" }}>
             <Image
-              src={project.coverImage}
+              src={project.internalImage ?? project.coverImage}
               alt={project.title}
               fill
               quality={90}
@@ -221,13 +221,13 @@ export default async function ProjectPage({
             <div className="mt-8 grid grid-cols-1 gap-6 border-t border-border pt-8 sm:grid-cols-2 md:mt-12 md:grid-cols-4 md:gap-12 md:pt-12">
               {project.category && (
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.15em]">{project.category}</p>
+                  <p className="text-base font-semibold uppercase tracking-[0.15em]">{project.category}</p>
                 </div>
               )}
               {project.responsibilities && (
                 <div className="sm:col-span-1 md:col-span-3">
-                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.15em]">Skills</p>
-                  <p className="text-sm leading-relaxed text-muted-foreground">{project.responsibilities}</p>
+                  <p className="mb-2 text-base font-semibold uppercase tracking-[0.15em]">O que foi feito</p>
+                  <p className="text-base leading-relaxed text-muted-foreground">{project.responsibilities}</p>
                 </div>
               )}
             </div>
@@ -262,7 +262,7 @@ export default async function ProjectPage({
             href={`/projetos/${next.slug}`}
             className="group flex flex-col gap-3 transition-opacity hover:opacity-90"
           >
-            <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+            <span className="text-base uppercase tracking-[0.2em] text-muted-foreground">
               Próximo projeto
             </span>
             <span className="font-display flex flex-wrap items-center gap-3 leading-[1] tracking-tight transition-colors group-hover:text-accent md:gap-4"

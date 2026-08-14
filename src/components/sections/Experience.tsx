@@ -14,13 +14,13 @@ export function Experience() {
         {/* Cabeçalho + lista */}
         <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-4">
-            <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+            <span className="text-base uppercase tracking-[0.2em] text-muted-foreground">
               03 — Experiência
             </span>
             <h2 className="font-section mt-4 text-[clamp(2.5rem,6vw,5rem)] leading-[1] tracking-tight">
               Trajetória.
             </h2>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-4 max-w-xs text-base leading-relaxed text-muted-foreground">
               7+ anos transitando entre fintech, cripto, branding e produto.
             </p>
           </div>
@@ -53,11 +53,11 @@ export function Experience() {
                     <p className="font-display truncate text-xl tracking-tight sm:text-2xl md:text-3xl">
                       {item.company}
                     </p>
-                    <p className="mt-1 text-sm text-muted-foreground">
+                    <p className="mt-1 text-base text-muted-foreground">
                       {item.role}
                     </p>
                   </div>
-                  <span className="mt-1 shrink-0 text-xs uppercase tracking-[0.18em] text-muted-foreground md:mt-0">
+                  <span className="mt-1 shrink-0 text-base uppercase tracking-[0.18em] text-muted-foreground md:mt-0">
                     {item.period}
                   </span>
                 </m.li>
@@ -69,7 +69,7 @@ export function Experience() {
         {/* Educação */}
         <div className="mt-20 grid grid-cols-1 gap-10 md:mt-32 md:grid-cols-12 md:gap-16">
           <div className="md:col-span-4">
-            <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+            <span className="text-base uppercase tracking-[0.2em] text-muted-foreground">
               Educação
             </span>
             <h3 className="font-section mt-4 text-3xl leading-[1] tracking-tight md:text-4xl">
@@ -87,12 +87,12 @@ export function Experience() {
                 className="flex flex-col gap-1 border-b border-border py-5 first:pt-0 sm:flex-row sm:items-center sm:justify-between"
               >
                 <div className="min-w-0">
-                  <p className="text-base">{item.course}</p>
-                  <p className="mt-0.5 text-xs text-muted-foreground">
+                  <p className="text-[30px]">{item.course}</p>
+                  <p className="mt-0.5 text-base text-muted-foreground">
                     {item.institution}
                   </p>
                 </div>
-                <span className="mt-1 shrink-0 text-xs uppercase tracking-[0.18em] text-muted-foreground sm:mt-0">
+                <span className="mt-1 shrink-0 text-base uppercase tracking-[0.18em] text-muted-foreground sm:mt-0">
                   {item.year}
                 </span>
               </m.li>

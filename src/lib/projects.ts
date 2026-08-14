@@ -16,6 +16,8 @@ export type Project = {
   year: string;
   description: string;
   coverImage: string;
+  internalImage?: string;
+  disabled?: boolean;
   size?: "large" | "small";
   role?: string;
   responsibilities?: string;
@@ -34,7 +36,8 @@ export const projects: Project[] = [
     year: "2025",
     description:
       "Campanha Orange Friday em parceria com o Banco Inter — descontos exclusivos para clientes Acerto, com pesquisa de benchmarking e interface orientada por dados.",
-    coverImage: `/capa-inter-nova.png`,
+    coverImage: `/card-inter.png`,
+    internalImage: `/capa-inter-interna.png`,
     size: "large",
     role: "Product Designer",
     responsibilities: "Interface design, benchmarking de competidores e desenvolvimento da campanha Orange Friday.",
@@ -51,12 +54,13 @@ export const projects: Project[] = [
   },
   {
     slug: "efi",
-    title: "EFÍ",
+    title: "EFÍ Bank",
     category: "Campanhas",
     year: "2024",
     description:
       "No EFÍ Bank, atuei como Marketing Product Designer com foco em meios de pagamento. Desenvolvi campanhas visuais para Pix e Bolix — desde posts e carrosséis de onboarding até e-mails transacionais, cartões e materiais de parceiros.",
-    coverImage: `/capa-efi-nova.png`,
+    coverImage: `/card-efi.png`,
+    internalImage: `/capa-efi-interna.png`,
     size: "small",
     role: "Marketing Product Designer",
     responsibilities: "Campanhas visuais para Pix e Bolix, posts e carrosséis de onboarding, e-mails transacionais, cartões e materiais de parceiros.",
@@ -104,10 +108,11 @@ export const projects: Project[] = [
     year: "2022",
     description:
       "Interface da maior plataforma de criptoativos da América Latina, com foco em fluxos de onboarding e trade para novos e experientes investidores.",
-    coverImage: `/capa-mb-nova.png`,
+    coverImage: `/card-mb.png`,
+    internalImage: `/capa-mb-interna.png`,
     size: "small",
     role: "Designer",
-    responsibilities: "Design de interface para fluxos de onboarding e trade, voltado para novos e experientes investidores.",
+    responsibilities: "Landing page institucional voltada para novos e experientes investidores.",
     problem: "A maior plataforma de criptoativos da América Latina precisava simplificar a experiência de entrada para novos usuários sem comprometer a profundidade exigida por investidores experientes.",
     objectives: "Criar uma landing page institucional para o MB Cloud — solução white-label do Mercado Bitcoin que permite empresas como bancos, fintechs e corretoras oferecerem criptoativos para seus próprios clientes. O projeto teve foco em comunicar credibilidade e proposta de valor para um público corporativo.",
     progress: "Desenvolvi uma hierarquia de informação clara e uma linguagem visual voltada para decisores de negócio, transmitindo solidez tecnológica e confiança institucional em cada seção da página.",
@@ -116,26 +121,12 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "crype",
-    title: "Crype",
-    category: "Interface",
-    year: "2023",
-    description:
-      "App mobile de carteira cripto com Design System completo, interfaces funcionais e protótipos interativos — desenvolvido durante o curso de Figma da @feux.",
-    coverImage: `/capa-crype.png`,
-    role: "UI Designer",
-    responsibilities: "Design System completo, interfaces funcionais para app mobile e landing page responsiva.",
-    problem: "Criar um aplicativo de carteira cripto que fosse intuitivo para usuários iniciantes sem abrir mão da profundidade necessária para quem já opera com criptomoedas.",
-    objectives: "Desenvolver um Design System robusto e um app mobile com interfaces funcionais e protótipos interativos, seguindo as melhores práticas do mercado de criptoativos.",
-    progress: "Iniciei com um benchmarking de competidores e referências de mercado, analisando interfaces de partes específicas dos produtos e a interação entre os elementos de UI.",
-    blocks: [
-      { type: "image-full", src: `/crype-1-5.png`, alt: "Crype — UI Elements" },
-      { type: "image-row", cols: 2, images: [`/crype-2.png`, `/crype-3.png`] },
-      { type: "image-full", src: `/crype-4.png`,   alt: "Crype — Hero" },
-      { type: "image-row", cols: 2, images: [`/crype-5.png`, `/crype-6.png`] },
-      { type: "image-full", src: `/crype-7.png`,   alt: "Crype — Telas do App" },
-      { type: "image-full", src: `/crype-8.jpg`,   alt: "Crype — Telas" },
-    ],
+    slug: "cobli",
+    title: "Cobli",
+    category: "Materiais de vendas",
+    year: "2026",
+    description: "Materiais de vendas para a Cobli.",
+    coverImage: `/card-cobli.png`,
   },
 ];
 

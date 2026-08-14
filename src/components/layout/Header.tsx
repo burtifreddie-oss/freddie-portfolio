@@ -59,14 +59,14 @@ export function Header() {
                     ? (e) => {
                         e.preventDefault();
                         if (pathname === "/") {
-                          window.scrollTo({ top: 0, behavior: "smooth" });
+                          document.getElementById("projetos")?.scrollIntoView({ behavior: "smooth" });
                         } else {
-                          window.location.href = "/";
+                          window.location.href = "/#projetos";
                         }
                       }
                     : undefined
                 }
-                className="link-underline text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                className="link-underline text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
               >
                 {link.label}
               </a>
@@ -76,18 +76,10 @@ export function Header() {
             <span className="h-4 w-px bg-border" aria-hidden />
 
             <a
-              href="https://www.linkedin.com/in/freddieburti/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link-underline text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-            >
-              LinkedIn
-            </a>
-            <a
               href="/freddie-burti-cv.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="link-underline text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="link-underline text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               Currículo
             </a>
@@ -138,9 +130,9 @@ export function Header() {
                           e.preventDefault();
                           setOpen(false);
                           if (pathname === "/") {
-                            window.scrollTo({ top: 0, behavior: "smooth" });
+                            document.getElementById("projetos")?.scrollIntoView({ behavior: "smooth" });
                           } else {
-                            window.location.href = "/";
+                            window.location.href = "/#projetos";
                           }
                         }
                       : () => setOpen(false)
@@ -150,7 +142,7 @@ export function Header() {
                   transition={{ delay: 0.08 + i * 0.06, duration: 0.4 }}
                   className="font-display flex items-center gap-4 border-b border-border py-5 text-[clamp(1.5rem,6vw,3.5rem)] tracking-tight"
                 >
-                  <span className="text-xs text-muted-foreground">0{i + 1}</span>
+                  <span className="text-base text-muted-foreground">0{i + 1}</span>
                   {link.label}
                 </m.a>
               ))}
@@ -163,20 +155,11 @@ export function Header() {
                 className="mt-8 flex flex-wrap gap-8"
               >
                 <a
-                  href="https://www.linkedin.com/in/freddieburti/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setOpen(false)}
-                  className="link-underline text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-                >
-                  LinkedIn
-                </a>
-                <a
                   href="/freddie-burti-cv.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setOpen(false)}
-                  className="link-underline text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                  className="link-underline text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
                 >
                   Currículo
                 </a>
