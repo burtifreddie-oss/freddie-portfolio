@@ -198,7 +198,7 @@ function CaseContent() {
         {/* ── 1. Contexto ── */}
         <CaseSection label="Contexto" tinted>
           <p className="text-base leading-relaxed text-foreground/80 sm:text-lg">
-            O time de vendas usava apresentações desatualizadas, sem padrão visual e sem padrão de conteúdo em reuniões com clientes. Cada vendedor construía ou pedia seu próprio material, gerando inconsistência de marca em um dos pontos de contato mais importantes com o cliente.
+            O time de vendas usava apresentações desatualizadas, sem padrão visual nem de conteúdo em reuniões com clientes. Cada vendedor construía ou pedia seu próprio material, gerando inconsistência de marca em um dos pontos de contato mais importantes com o cliente.
           </p>
         </CaseSection>
 
@@ -217,7 +217,7 @@ function CaseContent() {
             <li className="flex gap-3">
               <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-muted-foreground/40" />
               <p className="text-base leading-relaxed text-foreground/80">
-                <strong className="text-foreground font-medium">Gestão de arquivos:</strong> materiais espalhados no Drive, cada vendedor salvando em uma pasta diferente. Isso gerava retrabalho constante — pessoas pedindo pro marketing recriar apresentações que já existiam, só que ninguém sabia onde estavam.
+                <strong className="text-foreground font-medium">Gestão de arquivos:</strong> materiais espalhados no Drive, cada vendedor salvando em uma pasta diferente. Isso gerava retrabalho constante — pessoas pedindo ao marketing recriar apresentações que já existiam, só que ninguém sabia onde estavam.
               </p>
             </li>
           </ul>
@@ -285,10 +285,10 @@ function CaseContent() {
         <CaseSection label="Builder" tinted>
           <div className="flex flex-col gap-8">
             <p className="text-base leading-relaxed text-foreground/80 sm:text-lg">
-              Com o hub validado como repositório central de materiais de vendas, o passo seguinte é resolver a próxima camada do mesmo problema: hoje os vendedores acessam e baixam apresentações prontas, mas ainda dependem do marketing pra criar variações ou peças novas. A evolução natural é levar a criação pra dentro da própria plataforma.
+              Com o hub validado como repositório central de materiais de vendas, o passo seguinte é resolver a próxima camada do mesmo problema: hoje os vendedores acessam e baixam apresentações prontas, mas ainda dependem do marketing para criar variações ou peças novas. A evolução natural é levar a criação para dentro da própria plataforma.
             </p>
             <p className="text-base leading-relaxed text-foreground/80 sm:text-lg">
-              A ideia é permitir que o vendedor monte sua apresentação diretamente no hub, usando os blocos e templates já validados no sistema de design construído na primeira fase — sem sair do padrão de marca e sem depender de fila do time de marketing pra ajustes simples (trocar um logo de cliente, reordenar módulos, atualizar um número).
+              A ideia é permitir que o vendedor monte sua apresentação diretamente no hub, usando os blocos e templates já validados no sistema de design construído na primeira fase — sem sair do padrão de marca e sem depender de fila do time de marketing para ajustes simples (trocar um logo de cliente, reordenar módulos, atualizar um número).
             </p>
             <Image
               src="/cobli-builder.png"
