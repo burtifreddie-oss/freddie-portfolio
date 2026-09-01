@@ -281,7 +281,7 @@ function CaseContent() {
         </CaseSection>
 
         {/* ── 4. Builder ── */}
-        <CaseSection label="Builder" tinted>
+        <CaseSection label="Builder">
           <div className="flex flex-col gap-8">
             <p className="text-base leading-relaxed text-foreground/80 sm:text-lg">
               Com o hub validado como repositório central de materiais de vendas, o passo seguinte é resolver a próxima camada do mesmo problema: hoje os vendedores acessam e baixam apresentações prontas, mas ainda dependem do marketing para criar variações ou peças novas. A evolução natural é levar a criação para dentro da própria plataforma.
@@ -302,7 +302,7 @@ function CaseContent() {
         </CaseSection>
 
         {/* ── 5. Resultado ── */}
-        <CaseSection label="Resultado">
+        <CaseSection label="Resultado" tinted>
           <ul className="flex flex-col gap-8">
             <li className="flex gap-4 border-b border-border pb-8">
               <span className="mt-3 h-2 w-2 shrink-0 rounded-full bg-foreground/30" />
