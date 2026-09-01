@@ -184,10 +184,9 @@ function CaseContent() {
           {/* Meta row */}
           <div className="mt-8 grid grid-cols-1 gap-6 border-t border-border pt-8 sm:grid-cols-2 md:mt-12 md:grid-cols-4 md:gap-12 md:pt-12">
             <div>
-              <p className="text-base font-semibold uppercase tracking-[0.15em] text-foreground">Materiais de vendas</p>
+              <p className="text-base font-semibold uppercase tracking-[0.15em] text-foreground">Hub de materiais</p>
             </div>
             <div className="sm:col-span-1 md:col-span-3">
-              <p className="mb-2 text-base font-semibold uppercase tracking-[0.15em] text-white">O que foi feito</p>
               <p className="text-base leading-relaxed text-muted-foreground">
                 Sistema de templates de apresentação de vendas, hub centralizado de materiais e camada de dados para rastreamento de uso.
               </p>
