@@ -250,16 +250,6 @@ function CaseContent() {
           {/* 3.2 */}
           <div className="flex flex-col gap-4 pt-8 border-t border-border">
             <h3 className="text-base font-semibold uppercase tracking-[0.15em] text-foreground">
-              Reformulação de conteúdo, não só visual
-            </h3>
-            <p className="text-base leading-relaxed text-foreground/80">
-              O trabalho não foi só reskinning. Tom de voz e estrutura de conteúdo também foram revistos junto com o padrão visual — isso é uma decisão que mostra profundidade além do "deixar bonito".
-            </p>
-          </div>
-
-          {/* 3.3 */}
-          <div className="flex flex-col gap-4 pt-8 border-t border-border">
-            <h3 className="text-base font-semibold uppercase tracking-[0.15em] text-foreground">
               A plataforma (hub)
             </h3>
             <p className="text-base leading-relaxed text-foreground/80">
