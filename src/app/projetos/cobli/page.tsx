@@ -281,7 +281,28 @@ function CaseContent() {
           </div>
         </CaseSection>
 
-        {/* ── 4. Resultado ── */}
+        {/* ── 4. Builder ── */}
+        <CaseSection label="Builder" tinted>
+          <div className="flex flex-col gap-8">
+            <p className="text-base leading-relaxed text-foreground/80 sm:text-lg">
+              Com o hub validado como repositório central de materiais de vendas, o passo seguinte é resolver a próxima camada do mesmo problema: hoje os vendedores acessam e baixam apresentações prontas, mas ainda dependem do marketing pra criar variações ou peças novas. A evolução natural é levar a criação pra dentro da própria plataforma.
+            </p>
+            <p className="text-base leading-relaxed text-foreground/80 sm:text-lg">
+              A ideia é permitir que o vendedor monte sua apresentação diretamente no hub, usando os blocos e templates já validados no sistema de design construído na primeira fase — sem sair do padrão de marca e sem depender de fila do time de marketing pra ajustes simples (trocar um logo de cliente, reordenar módulos, atualizar um número).
+            </p>
+            <Image
+              src="/cobli-builder.png"
+              alt="Builder — editor de slides no hub"
+              width={1600}
+              height={900}
+              quality={90}
+              className="h-auto w-full rounded-lg"
+              sizes="(max-width: 768px) 100vw, (max-width: 1400px) 100vw, 1400px"
+            />
+          </div>
+        </CaseSection>
+
+        {/* ── 5. Resultado ── */}
         <CaseSection label="Resultado">
           <ul className="flex flex-col gap-8">
             <li className="flex gap-4 border-b border-border pb-8">
@@ -309,27 +330,6 @@ function CaseContent() {
               </p>
             </li>
           </ul>
-        </CaseSection>
-
-        {/* ── 5. Builder ── */}
-        <CaseSection label="Builder" tinted>
-          <div className="flex flex-col gap-8">
-            <p className="text-base leading-relaxed text-foreground/80 sm:text-lg">
-              Com o hub validado como repositório central de materiais de vendas, o passo seguinte é resolver a próxima camada do mesmo problema: hoje os vendedores acessam e baixam apresentações prontas, mas ainda dependem do marketing pra criar variações ou peças novas. A evolução natural é levar a criação pra dentro da própria plataforma.
-            </p>
-            <p className="text-base leading-relaxed text-foreground/80 sm:text-lg">
-              A ideia é permitir que o vendedor monte sua apresentação diretamente no hub, usando os blocos e templates já validados no sistema de design construído na primeira fase — sem sair do padrão de marca e sem depender de fila do time de marketing pra ajustes simples (trocar um logo de cliente, reordenar módulos, atualizar um número).
-            </p>
-            <Image
-              src="/cobli-builder.png"
-              alt="Builder — editor de slides no hub"
-              width={1600}
-              height={900}
-              quality={90}
-              className="h-auto w-full rounded-lg"
-              sizes="(max-width: 768px) 100vw, (max-width: 1400px) 100vw, 1400px"
-            />
-          </div>
         </CaseSection>
 
         {/* ── Próximo projeto ── */}
