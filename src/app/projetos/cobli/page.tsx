@@ -247,7 +247,7 @@ function CaseContent() {
           </div>
 
           {/* 3.2 */}
-          <div className="flex flex-col gap-4 pt-8 border-t border-border">
+          <div className="flex flex-col gap-4 mt-12 border-t border-border pt-12 md:mt-16 md:pt-16">
             <h3 className="text-base font-semibold uppercase tracking-[0.15em] text-foreground">
               A plataforma (hub)
             </h3>
