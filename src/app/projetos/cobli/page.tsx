@@ -309,7 +309,6 @@ function CaseContent() {
               </p>
             </li>
           </ul>
-          <ImagePlaceholder label="Antes / depois — apresentação antiga vs. novo padrão" aspect="16/7" />
         </CaseSection>
 
         {/* ── 5. Builder ── */}
