@@ -331,9 +331,6 @@ function CaseContent() {
             <p className="text-base leading-relaxed text-foreground/80 sm:text-lg">
               A ideia é permitir que o vendedor monte sua apresentação diretamente no hub, usando os blocos e templates já validados no sistema de design construído na primeira fase — sem sair do padrão de marca e sem depender de fila do time de marketing pra ajustes simples (trocar um logo de cliente, reordenar módulos, atualizar um número).
             </p>
-            <p className="text-base leading-relaxed text-foreground/80 sm:text-lg">
-              Isso fecha o ciclo do projeto: a primeira fase resolveu "onde está o material" e "como ele é consistente"; essa segunda fase resolve "como ele é montado", tirando o gargalo de produção do design e devolvendo autonomia ao time de vendas dentro de um sistema controlado.
-            </p>
             <ImagePlaceholder label="Builder — editor de slides no hub" aspect="16/9" />
           </div>
         </CaseSection>
