@@ -321,7 +321,15 @@ function CaseContent() {
             <p className="text-base leading-relaxed text-foreground/80 sm:text-lg">
               A ideia é permitir que o vendedor monte sua apresentação diretamente no hub, usando os blocos e templates já validados no sistema de design construído na primeira fase — sem sair do padrão de marca e sem depender de fila do time de marketing pra ajustes simples (trocar um logo de cliente, reordenar módulos, atualizar um número).
             </p>
-            <ImagePlaceholder label="Builder — editor de slides no hub" aspect="16/9" />
+            <Image
+              src="/cobli-builder.png"
+              alt="Builder — editor de slides no hub"
+              width={1600}
+              height={900}
+              quality={90}
+              className="h-auto w-full rounded-lg"
+              sizes="(max-width: 768px) 100vw, (max-width: 1400px) 100vw, 1400px"
+            />
           </div>
         </CaseSection>
 
