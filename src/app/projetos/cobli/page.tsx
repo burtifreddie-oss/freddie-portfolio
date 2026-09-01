@@ -182,7 +182,7 @@ function CaseContent() {
           <SlideMarquee />
 
           {/* Meta row */}
-          <div className="mt-8 grid grid-cols-1 gap-6 border-t border-border pt-8 sm:grid-cols-2 md:mt-12 md:grid-cols-4 md:gap-12 md:pt-12">
+          <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4 md:gap-12">
             <div>
               <p className="text-base font-semibold uppercase tracking-[0.15em] text-foreground">Hub de materiais</p>
             </div>
@@ -247,7 +247,7 @@ function CaseContent() {
           </div>
 
           {/* 3.2 */}
-          <div className="flex flex-col gap-4 mt-12 border-t border-border pt-12 md:mt-16 md:pt-16">
+          <div className="flex flex-col gap-4 mt-16">
             <h3 className="text-base font-semibold uppercase tracking-[0.15em] text-foreground">
               A plataforma (hub)
             </h3>
@@ -269,7 +269,7 @@ function CaseContent() {
           </div>
 
           {/* 3.4 */}
-          <div className="flex flex-col gap-4 pt-8 border-t border-border">
+          <div className="flex flex-col gap-4 mt-16">
             <h3 className="text-base font-semibold uppercase tracking-[0.15em] text-foreground">
               Camada de dados
             </h3>
@@ -304,19 +304,19 @@ function CaseContent() {
         {/* ── 5. Resultado ── */}
         <CaseSection label="Resultado" tinted>
           <ul className="flex flex-col gap-8">
-            <li className="flex gap-4 border-b border-border pb-8">
+            <li className="flex gap-4 pb-8">
               <span className="mt-3 h-2 w-2 shrink-0 rounded-full bg-foreground/30" />
               <p className="leading-snug text-foreground" style={{ fontSize: "24px", letterSpacing: "-0.02em" }}>
                 <strong className="font-semibold">Aumento de 37%</strong> de adesão aos materiais.
               </p>
             </li>
-            <li className="flex gap-4 border-b border-border pb-8">
+            <li className="flex gap-4 pb-8">
               <span className="mt-3 h-2 w-2 shrink-0 rounded-full bg-foreground/30" />
               <p className="leading-snug text-foreground" style={{ fontSize: "24px", letterSpacing: "-0.02em" }}>
                 <strong className="font-semibold">Redução de retrabalho</strong> do time de marketing (materiais deixaram de ser recriados do zero por estarem perdidos).
               </p>
             </li>
-            <li className="flex gap-4 border-b border-border pb-8">
+            <li className="flex gap-4 pb-8">
               <span className="mt-3 h-2 w-2 shrink-0 rounded-full bg-foreground/30" />
               <p className="leading-snug text-foreground" style={{ fontSize: "24px", letterSpacing: "-0.02em" }}>
                 <strong className="font-semibold">Validação</strong> via dado de uso (planilha), não só opinião subjetiva.
@@ -332,7 +332,7 @@ function CaseContent() {
         </CaseSection>
 
         {/* ── Próximo projeto ── */}
-        <div className="mx-auto mt-16 w-full max-w-[1400px] border-t border-border px-4 pt-8 pb-16 sm:px-6 md:mt-32 md:px-10 md:pt-16 md:pb-32">
+        <div className="mx-auto mt-16 w-full max-w-[1400px] px-4 pb-16 sm:px-6 md:mt-32 md:px-10 md:pb-32">
           <Link
             href="/projetos/inter"
             className="group flex flex-col gap-3 transition-opacity hover:opacity-90"
